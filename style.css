@@ -1,3 +1,8 @@
+/*FONT*/
+body {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+}
 /* FLEXBOX ONLY (no style)*/
 *{
     margin: 0;
@@ -48,15 +53,23 @@ ul{
 .me {
     display: flex;
     flex-direction: column;
-    width: 420px;
     flex: 0, 0, auto;
+    width: 35%;
 }
 
 .projects {
-    /*min-width: 420px; ? -> surface duo*/
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    width: 65%;
+}
+
+button {
+    width: fit-content;
+    border: none;
+    padding: 1vmin;
+    border-radius: 1.5vmin;
+    margin-left: 0.5vmax;       
 }
 
 
@@ -76,3 +89,74 @@ ul{
 .projects {
     background-color: #FFFFFF;
 }
+
+button {
+    background-color: black;
+    color: white;       
+}
+
+
+/*TEXT*/ 
+/*the only place .meText and .projectsText is used is here
+(i just made them to style the text)*/
+
+.meText {
+    color: white;
+    margin: 2vmin;
+    margin-left: 3vmin;
+}
+
+.projectsText {
+    color: black;
+}
+
+/*when i try to place the header elements in a headerText div there is a 
+problem and they loose the flexbox so im going to style them individually */
+.logo {
+    color: white;
+}
+.moreHeader {
+    color: white;
+}
+
+/*COLORFOUL STYLE*/
+
+
+
+/*FLEXBOX OF MY PROJECTS */
+
+a {
+    text-decoration: underline;
+    color: black;
+}
+
+/*images*/
+.js30 {
+    width: 25vmin;
+    height: 25vmin;
+    border: 0.5vmin solid black;
+}
+/*1st STYLE*/
+.firstStyle {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+
+    margin: 3vmax;
+    
+}
+.firstStyleContent{
+    display: flex;
+    flex-direction: column;
+    padding: 2.5vmax;
+    justify-content: center;
+    gap: 2vmin;
+}
+
+
+
+
+
+
