@@ -17,9 +17,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding-left: 4.5vh;
-    padding-right: 4.5vh;
-    padding-top: 3vh;
-    padding-bottom: 3vh; 
+    padding-right: 4.5vh; 
 }
 
 ul{
@@ -27,6 +25,12 @@ ul{
     list-style-type: none;
     flex-direction: row;
     gap: 10px;
+}
+
+.myFace img {
+    width: 10.5vmin;
+    height: 8vmin;
+   
 }
 
 /*THINGS FROM THE MAIN FONT PAGE */
@@ -53,8 +57,9 @@ ul{
 .me {
     display: flex;
     flex-direction: column;
-    flex: 0, 0, auto;
+    flex-grow: 1;
     width: 35%;
+    min-width: 40vmin;
 }
 
 .projects {
@@ -129,6 +134,10 @@ a {
     text-decoration: underline;
     color: black;
 }
+button a {
+    text-decoration: none;
+    color: white;
+}
 
 /*images*/
 .js30 {
@@ -136,7 +145,14 @@ a {
     height: 25vmin;
     border: 0.5vmin solid black;
 }
-/*1st STYLE*/
+.cssDraw {
+    width: 25vmin;
+    height: 25vmin;
+    border-radius: 5vmin;
+    border: 0.5vmin solid #F6F6F2;
+}
+
+/*FIRST STYLE*/
 .firstStyle {
     display: flex;
     flex-direction: row;
@@ -155,6 +171,24 @@ a {
     gap: 2vmin;
 }
 
+/*FIRST STYLE REVERSE*/
+.firstStyleReverse {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+
+    margin: 3vmax;
+    
+}
+.firstStyleReverseContent{
+    display: flex;
+    flex-direction: column;
+    padding: 2.5vmax;
+    justify-content: center;
+    gap: 2vmin;
+}
 
 
 

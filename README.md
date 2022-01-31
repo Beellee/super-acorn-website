@@ -5,6 +5,6 @@ https://beellee.github.io/super-acorn-website/
 
 Within the style for the section of my projects I have made several models. 
 
-## First Style (firstStyle)
+## First Style in the main page(firstStyle)
 
 [first Style] (images/firstStyleModel)
