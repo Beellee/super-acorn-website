@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cssArtStyle.css">
+</head>
+
+<body>
+    <!-- HEADER (Logo, other pages)-->
+    <header id="header">
+        <div class="house"><a href="index.html"><img src="images/house.png" alt="house"></a></div>
+        <div class="moreHeader">
+            <ul>
+                <li>one</li>
+                <li>two</li>
+                <li>three</li>
+            </ul>
+        </div>
+    </header>
+    <!-- MAIN FONT PAGE (Title, Background image) -->
+    <div class="mainFontPage">
+        <h1 class="title">CSS ART GALLERY</h1>
+    </div>
+    <!-- rest of the page -->
+    <main>
+        <section class="galleryIntro">
+            <div class="introText">
+                <h2>Whelcome to my art gallery</h2>
+                <p>I hope you enjoy the experience, if you want to see the code of a specific work, click on it</p>
+                <p><em>"Learn the rules like a pro so you can breack them like an artist"</em></p>
+                <p><em>Pablo Picasso</em></p>
+            </div>
+        </section>
+        <section>
+            <div class="firstArt">
+                <div class="fungy">
+                    <a href=""><img src="images/fungy.png" alt="fungy"></a>
+                </div>
+                <div class="firstArtSub">
+                    <p><strong>FUNGY THE CSS NINJA</strong></p>
+                    <p class="fungyClarification">(He knows that ninjas don't wear belt but he wanted to)</p>
+                </div>
+
+            </div>
+
+
+        </section>
+        <section>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </section>
+    </main>
+    <footer></footer>
+
+
+    <script>
+        const scrollContainer = document.querySelector("main");
+        scrollContainer.addEventListener("wheel", (evt) => {
+            // we track the mouse movement
+            evt.preventDefault();
+            scrollContainer.scrollLeft += evt.deltaY;
+            // direction the user is scrolling and the amount they scrolled
+
+        })
+    </script>
+
+
+</body>
+
+</html>
