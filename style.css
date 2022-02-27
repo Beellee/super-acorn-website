@@ -27,10 +27,10 @@ ul{
     gap: 10px;
 }
 
-.myFace img {
-    width: 10.5vmin;
-    height: 8vmin;
-   
+.icon img {
+    max-width: 7vmin;
+    max-height: auto;
+   padding-top: 1vmin;
 }
 
 /*THINGS FROM THE MAIN FONT PAGE */
@@ -80,7 +80,7 @@ button {
 
 /* SOSO STYLE*/
 #header {
-    background-color: #000000;
+    background-color: #ffffff;
 }
 
 .mainFontPage {
@@ -121,7 +121,7 @@ problem and they loose the flexbox so im going to style them individually */
     color: white;
 }
 .moreHeader {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 /*COLORFOUL STYLE*/

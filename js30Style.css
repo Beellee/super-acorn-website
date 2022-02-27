@@ -1,7 +1,8 @@
 /* EXACTLY THE SAME AS THE MAIN PAGE (style.css) ((excep of the .house))*/
-.house a img{
-    width: 10.5vmin;
-    height: 8vmin;
+.icon a img{
+    max-width: 7vmin;
+    max-height: auto;
+   padding-top: 1vmin
 }
 /*FONT*/
 body {
