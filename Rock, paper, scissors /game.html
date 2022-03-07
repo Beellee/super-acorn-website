@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="game.css">
+</head>
+
+<body onload="initialSet ()">
+    <div class="title">
+        <h2>R🪨CK, PAP🧻R, SCIS✂️ORS</h1>
+            <h3>Use the arrow keys to explore <img src="rightArrow.PNG" alt=""><img src="leftArrow.PNG" alt=""></h3>
+    </div>
+    <div class="container">
+        <!-- CHARACTERS -->
+        <div class="background"><img src="background.jpg" alt=""></div>
+        <div><img id="ghost" src="ghost.png" alt=""></div>
+        <div class="guardian" onmouseover="showTextGuardian()" onmouseout="hideTextGuardian()"><img src="guardian.png" alt=""></div>
+        <!--when the player wins-->
+        <div class="newGuardian"><img src="newGuardian.png" alt=""></div>
+        <div class="transformGuardian"><img src="guardian.png" alt=""></div>
+        <!-- GUARDIAN TEXT -->
+        <div class="hide">I need a flower</div>
+        <!-- CHARACTERS -->
+        <button class="frog"><img src="frog.png" alt=""></button>
+        <div class="flower"><img id="flower" src="flower.png" alt=""></div>
+        <!-- FROG DIALOG -->
+        <div class="frogChallenge">
+            <p>If you want my flower you must beat me in a duel of rock, paper and scissors</p>
+            <p>Are you ready?</p>
+            <div class="yesNo"><button class="buttonYes" onclick="window.location.href='.numberOfRounds'">Yes!</button>
+                <button class="buttonNo" onclick="window.location.href='.noText'">No</button>
+            </div>
+        </div>
+
+        <!-- if player doesn't want to play -->
+        <div class="noText">
+            <p>It's a shame...</p>
+            <p>I guess then I'll eat the flower</p>
+        </div>
+        <div class="youFaildText">
+            <p>You have failed in your mission.</p>
+            <p>now this game will be destroyed.</p>
+        </div>
+
+        <!-- if player wants to play -->
+        <div class="numberOfRounds">
+            <p>Thats great! how many rounds do you want to play?</p>
+            <input id="inputRounds" type="number"> <button class="buttonOk" onclick="window.location.href='.ok'">Ok</button>
+        </div>
+
+        <div class="ok">
+            <div class="gameCanvas">
+                <div class="score">
+                    <div class="playerScore">0</div>
+                    <div class="div">|</div>
+                    <div class="computerScore">0</div>
+                </div>
+                <div class="flexbox">
+                    <div class="ghostPick">
+                        <p>What do you pick? </p>
+                        <div>
+                            <button class="buttonRockPlayer" onclick="playerChoose('1')">
+                                <h1>🪨</h1>
+                            </button>
+                            <button class="buttonPaperPlayer" onclick="playerChoose('2')">
+                                <h1>🧻</h1>
+                            </button>
+                            <button class="buttonScissorsPlayer" onclick="playerChoose('3')">
+                                <h1>✂️</h1>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="frogPick">
+                        <p>Frog picks:</p>
+                        <div class="div">
+                            <button class="buttonRockComputer">
+                                <h1>🪨</h1>
+                            </button>
+                            <button class="buttonPaperComputer">
+                                <h1>🧻</h1>
+                            </button>
+                            <button class="buttonScissorsComputer">
+                                <h1>✂️</h1>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="round">
+                    <p>Round</p>
+                    <div class="countOfRounds">1</div>
+                </div>
+            </div>
+        </div>
+        <div class="roundWinnerFrog">
+            <p>Frog wins!</p>
+        </div>
+        <div class="roundWinnerGhost">
+            <p>You win!</p>
+        </div>
+        <div class="roundWinnerTie">
+            <p>It's a tie!</p>
+        </div>
+
+        <div class="finalWinnerGhostText">
+            <p>Oh thanks a lot for helping me to restore my flower :)</p>
+        </div>
+
+        <div class="finalWinnerTieText">
+            <p>I almost gotcha!</p>
+            <p>We play again? </p>
+            <div class="finalWinnerTieTextButtons"><button class="finalWinnerTieTextOk">Ok</button><button class="finalWinnerTieTextNah">Nah</button></div>
+        </div>
+        <div class="frogLeaves">
+            <p>Okey, then, I guess we dont have anything else to talk about</p>
+        </div>
+        
+        <div class="finalResultsFrog">
+            <p class="finalResults" ></p>
+            <p>Final score:</p>
+            <div class="finalScore">
+                <div class="playerFinalScore">0</div>
+                <div class="div">|</div>
+                <div class="computerFinalScore">0</div>
+            </div>
+        </div>
+        
+
+
+        <!--
+        
+        -->
+
+    </div>
+    <div class="ghostText">
+        <p>Oh! thank God you are here, could you please help me on my trip?</p>
+    </div>
+    <div class="clickTheGhost">
+        <p>(to start exploring click on the ghost)</p>
+    </div>
+
+
+
+
+
+</body>
+
+<script>
+    /*horizontal page*/
+    const scrollContainer = document.querySelector(".background");
+    scrollContainer.addEventListener("wheel", (evt) => {
+        // we track the mouse movement
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
+        // direction the user is scrolling and the amount they scrolled
+    })
+
+    /*guardian hover*/
+    
+    const hide = document.querySelector('.hide')
+    function showTextGuardian(){
+        hide.style.display = 'block';
+    }
+    function hideTextGuardian() {
+        hide.style.display = 'none'
+    }
+
+    /*ghost movement*/
+    let counter = 1;
+    let lenghtCounter = 1;
+
+    ghost.onclick = function () {
+        let start = Date.now();
+        let ghost = document.querySelector('#ghost')
+
+        let timer = setInterval(function () {
+
+            let timePassed = Date.now() - start;
+            let wizardDistance = counter + 'px';
+
+            ghost.style.left = wizardDistance;
+            counter += 5;
+
+            if (lenghtCounter == 1) {
+                if (timePassed > 5800) {
+                    lenghtCounter++;
+                    clearInterval(timer);
+                }
+            } else {
+                if (timePassed > 5800) {
+                    clearInterval(timer);
+                }
+            }
+        }, 20);
+    }
+
+
+
+    /*initial set*/
+    const newGuardian = document.querySelector('.newGuardian')
+    const transformGuardian = document.querySelector('.transformGuardian')
+    const finalWinnerGhostText = document.querySelector('.finalWinnerGhostText')
+    const finalResultsFrog = document.querySelector('.finalResultsFrog')
+    function initialSet() {
+        frogChallenge.style.display = 'none'
+        numberOfRounds.style.display = 'none'
+        ok.style.display = 'none'
+
+        roundWinnerFrog.style.display = 'none'
+        roundWinnerGhost.style.display = 'none'
+        roundWinnerTie.style.display = 'none'
+
+        newGuardian.style.display = 'none'
+        transformGuardian.style.display = 'none'
+        finalWinnerGhostText.style.display = 'none'
+
+        frogLeaves.style.display = 'none'
+        finalWinnerTieText.style.display = 'none'
+        finalResultsFrog.style.display = 'none'
+    }
+
+
+
+    /*make the frog text appear and disappear onclick*/
+    const frogChallenge = document.querySelector('.frogChallenge')
+    const button = document.querySelector('.frog')
+
+    button.onclick = function () {
+        if (frogChallenge.style.display != 'none') {
+            frogChallenge.style.display = 'none';
+        } else {
+            frogChallenge.style.display = 'block';
+        }
+    };
+
+    /*frog dialog*/
+    const buttonYes = document.querySelector('.buttonYes')
+    const numberOfRounds = document.querySelector('.numberOfRounds')
+    buttonYes.onclick = function () {
+        numberOfRounds.style.display = 'block';
+        frogChallenge.style.display = 'none';
+    };
+
+    const buttonNo = document.querySelector('.buttonNo')
+    const noText = document.querySelector('.noText')
+    const flower = document.querySelector('#flower')
+    const youFaildText = document.querySelector('.youFaildText')
+
+    function deleteFlower() {
+        flower.style.display = 'none';
+        noText.style.display = 'none';
+        youFaildText.style.display = 'block'
+        setTimeout(function () { deleteGame(); }, 2000);
+    }
+    function deleteGame() {
+        window.location.href = "https://www.goliath-entertainment.com/404";
+    }
+
+    buttonNo.onclick = function () {
+        flower.classList.add("eatingFlower");
+        noText.style.display = 'block';
+        frogChallenge.style.display = 'none';
+        
+        
+
+        setTimeout(function () { deleteFlower(); }, 5000);
+
+    };
+
+
+    const buttonOk = document.querySelector('.buttonOk')
+    const ok = document.querySelector('.ok')
+    buttonOk.onclick = function () {
+        numberOfRounds.style.display = 'none'
+        ok.style.display = 'block'
+        inputRoundsFunction();
+    }
+
+    const roundWinnerFrog = document.querySelector(".roundWinnerFrog")
+    const roundWinnerGhost = document.querySelector(".roundWinnerGhost")
+    const roundWinnerTie = document.querySelector(".roundWinnerTie")
+
+    //displays for the tie 
+    const finalWinnerTieTextOk = document.querySelector('.finalWinnerTieTextOk')
+    const finalWinnerTieText = document.querySelector('.finalWinnerTieText')
+    const finalWinnerTieTextNah = document.querySelector('.finalWinnerTieTextNah')
+    const frogLeaves = document.querySelector('.frogLeaves')
+    finalWinnerTieTextOk.onclick = function (){
+        finalWinnerTieText.style.display = 'none'
+        numberOfRounds.style.display = 'block'
+        finalResultsFrog.style.display = 'none'
+    }
+    finalWinnerTieTextNah.onclick = function(){
+        finalWinnerTieText.style.display = 'none'
+        frogLeaves.style.display = 'block'
+        setTimeout(function () { removeNahText(); }, 2000);
+    }
+    function removeNahText(){
+        frogLeaves.classList.add("fadeOut")
+        setTimeout(function () { removeNahText2(); }, 2000)
+    }
+    function removeNahText2() {
+        frogLeaves.style.display = 'none'
+    }
+
+
+    /*🌟THIS IS WHERE THE GAME STARTS🌟*/
+
+    var choose = 0;
+    function playerChoose(numberGame) {
+        choose = numberGame;
+        playerSelection(choose)
+    }
+
+
+    /*LOOP*/
+
+    var roundsPlayed = 0
+    var inputRounds = 0
+   
+
+    function inputRoundsFunction(){
+       
+        inputRounds= document.getElementById("inputRounds").value;
+        console.log (inputRounds);
+    }
+
+
+    /*PAYER SELECTION (animation of the buttons)*/
+    const buttonRockPlayer = document.querySelector('.buttonRockPlayer')
+    const buttonPaperPlayer = document.querySelector('.buttonPaperPlayer')
+    const buttonScissorsPlayer = document.querySelector('.buttonScissorsPlayer')
+    //var playerScore = document.querySelector(".countOfRounds").textContent
+
+    function playerSelection(choose) {
+        console.log("2 stupid numbers")
+        console.log(roundsPlayed)
+        console.log(inputRounds)
+        if(roundsPlayed == inputRounds){
+            roundsPlayed = 0
+            console.log ("finish");
+            endGame()
+            
+            return
+        }
+
+        console.log(roundsPlayed)
+
+        roundsPlayed += 1;
+
+        if (choose == 1) {
+            console.log("You play rock");
+            buttonRockPlayer.classList.add("computerChoose")
+
+            buttonPaperPlayer.classList.remove("computerChoose")
+            buttonScissorsPlayer.classList.remove("computerChoose")
+        } else if (choose == 2) {
+            console.log("You play paper");
+            buttonPaperPlayer.classList.add("computerChoose")
+
+            buttonScissorsPlayer.classList.remove("computerChoose")
+            buttonRockPlayer.classList.remove("computerChoose")
+        } else {
+            console.log("You play scissors");
+            buttonScissorsPlayer.classList.add("computerChoose")
+
+            buttonPaperPlayer.classList.remove("computerChoose")
+            buttonRockPlayer.classList.remove("computerChoose")
+        }
+        let randomNumber = (Math.floor(Math.random() * (3 - 1 + 1)) + 1);
+        document.querySelector(".countOfRounds").textContent = roundsPlayed;
+
+        computerPlay(randomNumber);
+        playRound(choose, randomNumber);
+        
+    }
+
+
+    /*COMPUTER PLAY (and animation of the buttons) */
+    //tenía um problema: randomnumber se genera bien pero no entraba bien a la funcion; console.log decía undefined
+    // lo he solucionado quitando randomNumber de los paréntesis de la función; function computerPlay(randomNumber)
+
+    
+    //console.log(randomNumber)
+
+    const buttonRockComputer = document.querySelector('.buttonRockComputer')
+    const buttonPaperComputer = document.querySelector('.buttonPaperComputer')
+    const buttonScissorsComputer = document.querySelector('.buttonScissorsComputer')
+
+    function computerPlay(randomNumber) {
+        
+        // console.log(randomNumber)
+        if (randomNumber === 1) {
+            console.log("Computer plays rock");
+            buttonRockComputer.classList.add("computerChoose")
+            buttonPaperComputer.classList.remove("computerChoose")
+            buttonScissorsComputer.classList.remove("computerChoose")
+
+        } else if (randomNumber === 2) {
+            console.log("Computer plays paper");
+            buttonPaperComputer.classList.add("computerChoose")
+            buttonRockComputer.classList.remove("computerChoose")
+            buttonScissorsComputer.classList.remove("computerChoose")
+
+        } else {
+            console.log("Computer plays scissors");
+            buttonScissorsComputer.classList.add("computerChoose")
+            buttonRockComputer.classList.remove("computerChoose")
+            buttonPaperComputer.classList.remove("computerChoose")
+        }
+        
+    }
+
+    /*ROUND*/
+    var playerScoreRounds = 0
+    var computerScoreRounds = 0
+
+    var playerScore = document.querySelector(".playerScore").textContent
+    var computerScore = document.querySelector(".computerScore").textContent
+    
+    var playerFinalScore = document.querySelector(".playerFinalScore").textContent
+    var computerFinalScore = document.querySelector(".computerFinalScore").textContent
+
+
+    function playRound(choose, randomNumber) {
+        console.log(choose + "" + randomNumber);
+
+        
+        if (randomNumber == choose) {
+            console.log("It's a tie!")
+            roundWinnerTie.style.display = 'block'
+            roundWinnerGhost.style.display = 'none'
+            roundWinnerFrog.style.display = 'none'
+
+        } else if (randomNumber == 1 & choose == 2) {
+            console.log("You win!");
+            roundWinnerGhost.style.display = 'block'
+            roundWinnerTie.style.display = 'none'
+            roundWinnerFrog.style.display = 'none'
+
+            playerScoreRounds += 1;
+
+        } else if (randomNumber == 2 & choose == 1) {
+            console.log("Computer wins!");
+            roundWinnerFrog.style.display = 'block'
+            roundWinnerTie.style.display = 'none'
+            roundWinnerGhost.style.display = 'none'
+
+            computerScoreRounds += 1;
+
+        } else if (randomNumber == 1 & choose == 3) {
+            console.log("Computer wins!");
+            roundWinnerFrog.style.display = 'block'
+            roundWinnerTie.style.display = 'none'
+            roundWinnerGhost.style.display = 'none'
+
+            computerScoreRounds += 1;
+
+        } else if (randomNumber == 3 & choose == 1) {
+            console.log("You win!");
+            roundWinnerGhost.style.display = 'block'
+            roundWinnerTie.style.display = 'none'
+            roundWinnerFrog.style.display = 'none'
+
+            playerScoreRounds += 1;
+
+        } else if (randomNumber == 2 & choose == 3) {
+            console.log("You win!")
+            roundWinnerGhost.style.display = 'block'
+            roundWinnerTie.style.display = 'none'
+            roundWinnerFrog.style.display = 'none'
+
+            playerScoreRounds += 1;
+
+        } else if (randomNumber == 3 & choose == 2) {
+            console.log("Computer wins!")
+            roundWinnerFrog.style.display = 'block'
+            roundWinnerTie.style.display = 'none'
+            roundWinnerGhost.style.display = 'none'
+
+            computerScoreRounds += 1;
+
+        } else {
+            console.log("Oh I see you are too scared for the fight 😏");
+        }
+
+        document.querySelector(".playerScore").textContent = playerScoreRounds;
+        document.querySelector(".computerScore").textContent = computerScoreRounds
+        
+        document.querySelector(".playerFinalScore").textContent = playerScoreRounds;
+        document.querySelector(".computerFinalScore").textContent = computerScoreRounds
+    }
+    
+   var finalResults = document.querySelector(".finalResults").textContent
+    function endGame(){
+        finalResultsFrog.style.display ='block'
+        console.log (finalResults)
+
+        ok.style.display ='none'
+        roundWinnerFrog.style.display ='none'
+        roundWinnerGhost.style.display ='none'
+        roundWinnerTie.style.display ='none'
+
+       
+        if (playerScoreRounds < computerScoreRounds){
+            console.log("eat flower")
+            document.querySelector(".finalResults").textContent = "The frog wins the game"
+            finalWinnerFrog()
+
+        }else if (playerScoreRounds > computerScoreRounds){
+            console.log ("happy guardian")
+            document.querySelector(".finalResults").textContent = "The ghost wins the game"
+            finalWinnerGhost()
+
+        }else if (playerScoreRounds == computerScoreRounds){
+            console.log("tie")
+            document.querySelector(".finalResults").textContent = "There is a tie, no one wins ¯\_(ツ)_/¯"
+            finalWinnerTie () 
+            
+        }else{
+            console.log ("you are a shit")
+        }
+
+       // computerScoreRounds = 0
+       // playerScoreRounds = 0 
+
+        //THIS IS FOR THE PLAY AGAIN 
+        buttonScissorsPlayer.classList.remove("computerChoose")
+        buttonPaperPlayer.classList.remove("computerChoose")
+        buttonRockPlayer.classList.remove("computerChoose")
+
+        buttonScissorsComputer.classList.remove("computerChoose")
+        buttonPaperComputer.classList.remove("computerChoose")
+        buttonRockComputer.classList.remove("computerChoose")
+        
+    }
+
+   
+    function finalWinnerFrog(){
+        flower.classList.add("eatingFlower");
+        noText.style.display = 'block';
+        ok.style.display = 'none';
+    
+        setTimeout(function () { deleteFlower(); }, 5000);
+    }
+
+    const removeTheOldGuardian = document.querySelector('.guardian')
+    function finalWinnerGhost(){
+        removeTheOldGuardian.style.display = 'none'
+        transformGuardian.classList.add("fadeIn")
+        transformGuardian.style.display = 'block'
+        setTimeout(function () { finalWinnerGhost2(); }, 3000);
+        flower.classList.add("fadeOut")
+
+    }
+  
+    function finalWinnerGhost2(){
+        flower.style.display = 'none'
+        transformGuardian.classList.add("fadeOut")
+        newGuardian.classList.add("fadeIn")
+        newGuardian.style.display = 'block'
+        finalWinnerGhostText.classList.add("fadeIn")
+        finalWinnerGhostText.style.display = 'block'
+        finalWinnerGhost3 ()
+    }
+    function finalWinnerGhost3 (){
+        newGuardian.style.display = 'block'
+        transformGuardian.style.display = 'none'
+    }
+
+    function finalWinnerTie (){
+        finalResultsFrog.style.display ='block'
+
+        roundWinnerTie.style.display = 'none'
+        ok.style.display = 'none';
+        finalWinnerTieText.style.display = 'block'
+
+
+        
+    }
+
+    
+   // var finalPlayerScore = document.querySelector(".countOfRounds").textContent
+
+
+</script>

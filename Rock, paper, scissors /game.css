@@ -1,0 +1,525 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace;
+}
+
+html{
+    background-color: black;
+}
+
+div{
+    display: block;
+}
+.container {
+    position: relative;
+}
+
+.background img {
+    position: relative;
+    min-width: 100vh;
+    min-height: 100vh;
+}
+
+#ghost {
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    
+    height: 30vh;
+    width: auto;
+    animation: MoveUpAndDown 2s linear infinite;
+}
+@keyframes MoveUpAndDown{
+    0%, 100% {
+        bottom: 21vmin;
+    } 50% {
+        bottom: 24vmin;
+    }
+}
+
+
+.guardian img {
+    position: absolute;
+    bottom: 18vh;
+    left: 205vh;
+    
+    
+    height: 40vh;
+
+    cursor: pointer;
+    z-index: 7;
+}
+
+.hide{
+    display: none;
+    position: absolute;
+    z-index: 7;
+
+    width: fit-content;
+    padding: 0.8vmin;
+    top: 40vmin;
+    left: 213vmin;
+    background-color: rgba(240, 248, 255, 0.808);
+    border-radius: 1vmin;
+}
+
+/*if the player wins*/
+.newGuardian img {
+    position: absolute;
+    bottom: 18vh;
+    left: 302.5vh;
+
+    height: 45vh;
+    width: auto;
+}
+.transformGuardian img {
+    position: absolute;
+    bottom: 18vh;
+    left: 303.7vh;
+
+    height: 42vh;
+    width: auto;
+}
+/**/
+
+.frog img{
+    position: absolute;
+    bottom: 18vh;
+    left: 400vh;
+
+    height: 25vh;
+    width: auto;
+
+    cursor: pointer;
+}
+.flower img{
+    position: absolute;
+    top: 71.5vh;
+
+    left: 390vh;
+
+    height: 15vh;
+    width: auto;
+    bottom: 22vh;
+}
+.eatingFlower{
+    animation-name: fade-out;
+    animation-duration: 5s;
+}
+@keyframes fade-out {
+    0%{
+        opacity: 100%;
+    } 100% {
+        opacity: 0%;
+    }
+}
+
+.title {
+    position: absolute;
+    z-index: 3;
+
+    font-size: 30px;
+    color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.349);
+    border-radius: 2vmin;
+    width: auto;
+    height: auto;
+    padding: 4vmin;
+
+    top: 8vmin;
+    left: 20vmin;
+}
+
+.title img {
+    width: 7vmin;
+    height: auto;
+
+    position: relative;
+    right: 1vmin;
+    top: 1vmin;
+}
+
+.ghostText {
+    position: absolute;
+    z-index: 3;
+
+    color: aliceblue;
+    background-color: rgba(220, 222, 228, 0.061);
+    border-radius: 2vmin;
+    width: 30vmin;
+    height: auto;
+    padding: 2vmin;
+
+    top: 38vmin;
+    left: 10vmin;
+
+    animation-name: fade-in;
+    
+    animation-duration: 10s;
+    
+}
+
+@keyframes fade-in {
+    0%{
+        opacity: 0%;
+    } 100% {
+        opacity: 100%;
+    }
+}
+
+.clickTheGhost{
+    position: absolute;
+    z-index: 3;
+
+    color: aliceblue;
+    background-color: rgba(220, 222, 228, 0.061);
+    border-radius: 2vmin;
+    width: 30vmin;
+    height: auto;
+    padding: 2vmin;
+
+    top: 85vmin;
+    left: 10vmin;
+
+    animation-name: fade-in;
+    
+    animation-duration: 10s;
+}
+
+
+
+.frogChallenge {
+    display: none;
+}
+.frogChallenge {
+    position: absolute;
+    z-index: 2;
+
+    width: 40vh;
+    padding: 0.8vmin;
+    top: 40vmin;
+    left: 391vmin;
+    background-color: rgba(240, 248, 255, 0.808);
+    border-radius: 1vmin;
+}
+
+.yesNo button {
+    width: 5vmin;
+}
+
+.numberOfRounds {
+    display: none;
+    position: absolute;
+    z-index: 2;
+
+    width: 40vh;
+    padding: 0.8vmin;
+    top: 40vmin;
+    left: 391vmin;
+    background-color: rgba(240, 248, 255, 0.808);
+    border-radius: 1vmin;
+}
+.numberOfRounds button {
+    width: 5vmin;
+}
+
+.noText {
+    display: none;
+    position: absolute;
+    z-index: 2;
+
+    width: 40vh;
+    padding: 0.8vmin;
+    top: 40vmin;
+    left: 391vmin;
+    background-color: rgba(240, 248, 255, 0.808);
+    border-radius: 1vmin;
+}
+.youFaildText{
+    display: none;
+    position: absolute;
+    z-index: 2;
+
+    width: 40vh;
+    padding: 0.8vmin;
+    top: 40vmin;
+    left: 391vmin;
+    background-color: rgba(240, 248, 255, 0.808);
+    color: rgb(250, 1, 1);
+    border-radius: 1vmin;
+}
+
+.ok {
+    position: absolute;
+    z-index: 2;
+
+    width: 59vh;
+    
+    top: 25vmin;
+    left: 358vmin;
+}
+
+.gameCanvas{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3vmin;
+}
+
+.flexbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5vmin;
+}
+
+.ghostPick{
+    background-color: rgba(240, 248, 255, 0.808);
+    border-radius: 1vmin;
+    padding: 2vmin;
+
+    width: 24vmin;
+    height: 10vmin;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.ghostPick button {
+    background: none;
+	color: inherit;
+	border: none;
+
+    cursor: pointer;
+
+    margin: 0.3vmin;
+}
+
+.frogPick {
+    background-color: rgba(240, 248, 255, 0.808);
+    border-radius: 1vmin;
+    padding: 2vmin;
+
+    width: 24vmin;
+    height: 10vmin;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.frogPick button {
+    background: none;
+	color: inherit;
+	border: none;
+
+    cursor: pointer;
+
+    margin: 0.3vmin;  
+    
+    border-radius: 1vmin;
+    padding: 0.5vmin;
+}
+
+.score {
+    background-color: rgba(240, 248, 255, 0.808);
+    border-radius: 1vmin;
+    padding: 2vmin;
+
+    display: flex;
+    flex-direction: row;
+    gap: 1.5vmin;
+
+    width: fit-content;
+}
+.round {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5vmin;
+
+    background-color: rgba(240, 248, 255, 0.808);
+    border-radius: 1vmin;
+    padding: 2vmin;
+
+    width: fit-content;
+}
+
+.computerChoose {
+    padding: 0.5vmin;
+    border-radius: 0.5vmin;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+
+.roundWinnerFrog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    z-index: 3;
+    top: 16vmin;
+    left: 379.5vmin;
+
+
+    background-color: rgba(124, 10, 39, 0.808);
+    border-radius: 1vmin;
+    padding: 2vmin;
+
+    width: fit-content;
+    
+}
+
+.roundWinnerGhost{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    z-index: 3;
+    top: 16vmin;
+    left: 380.7vmin;
+
+
+    background-color: rgba(10, 124, 105, 0.808);
+    border-radius: 1vmin;
+    padding: 2vmin;
+
+    width: fit-content;
+}
+
+.roundWinnerTie{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    z-index: 3;
+    top: 16vmin;
+    left: 379.5vmin;
+
+
+    background-color: rgba(36, 68, 211, 0.808);
+    border-radius: 1vmin;
+    padding: 2vmin;
+
+    width: fit-content;
+}
+
+/*animations for the end*/
+
+.fadeIn {
+    animation-name: fade-in-end;
+    
+    animation-duration: 5s;
+}
+@keyframes fade-in-end{
+    0%{
+        opacity: 0%;
+    } 100% {
+        opacity: 100%;
+    }
+}
+.fadeOut{
+    animation-name: fade-out-end;
+    animation-duration: 5s;
+}
+@keyframes fade-out-end{
+    0%{
+        opacity: 100%;
+    } 100% {
+        opacity: 0%;
+    }
+}
+
+.finalWinnerGhostText{
+    position: absolute;
+    z-index: 3;
+    top: 25vmin;
+    left: 300.5vmin;
+
+
+    background-color: rgba(240, 248, 255, 0.808);
+    border-radius: 1vmin;
+    padding: 2vmin;
+
+    width: 35vmin;
+}
+
+.finalWinnerTieText {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    gap: 0.5vmin;
+
+    position: absolute;
+    z-index: 3;
+    top: 42vmin;
+    left: 394.5vmin;
+
+
+    background-color: rgba(240, 248, 255, 0.808);
+    border-radius: 1vmin;
+    padding: 2vmin;
+
+    width: 24vmin;
+}
+.finalWinnerTieTextButtons{
+    display: flex;
+    flex-direction: row;
+    gap: 1vmin;
+}
+.finalWinnerTieTextButtons button{
+    margin-top: 1vmin;
+    width: 4vmin;
+}
+
+.frogLeaves{
+    position: absolute;
+    z-index: 3;
+    top: 42vmin;
+    left: 394.5vmin;
+
+
+    background-color: rgba(240, 248, 255, 0.808);
+    border-radius: 1vmin;
+    padding: 2vmin;
+
+    width: 24vmin;
+}
+
+
+.finalResultsFrog{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    z-index: 2;
+
+    width: 40vmin;
+    
+    top: 25vmin;
+    left: 358vmin;
+
+    background-color: rgba(240, 248, 255, 0.808);
+    border-radius: 1vmin;
+    padding: 2vmin;
+}
+.finalScore{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5vmin;
+
+}
+
+

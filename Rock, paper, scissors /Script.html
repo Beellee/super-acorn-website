@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>🪨, 🧻, ✂️</h1>
+</body>
+
+<script>
+
+    console. log ("hi :)")
+
+    function computerPlay(randomNumber){
+        console.log (randomNumber)
+        if (randomNumber=== 1){
+            console.log ("Computer plays rock");
+        } else if (randomNumber===2){
+            console.log ("Computer plays paper");
+        }else {
+            console.log ("Computer plays scissors");
+        }
+    }
+    
+    function playerSelection(choose, randomNumber) {
+        if (choose === "rock") {
+            console.log ("You play rock");
+            choose = 1;
+        } else if (choose === "paper") {
+            console.log ("You play paper");
+            choose = 2;
+        } else if (choose === "scissors") {
+            console.log ("You play scissors");
+            choose = 3;
+        } else {
+            console.log ("Dont cheat! you can only play rock, paper or scissors 😤")
+        }
+        playRound(choose, randomNumber);
+    }
+
+
+    function playRound(choose, randomNumber){
+        console.log (choose, randomNumber);
+        if (randomNumber === choose){
+            console.log ("It's a tie!")
+        } else if (randomNumber === 1 & choose ===  2){
+            console. log ("You win!");
+        } else if (randomNumber === 2 & choose === 1){
+            console.log ("Computer wins!");
+        } else if (randomNumber === 1 & choose === 3) {
+            console.log ("Computer wins!");
+        } else if (randomNumber === 3 & choose === 1) {
+            console.log ("You win!");
+        } else if (randomNumber === 2 & choose === 3) {
+            console.log ("You win!")
+        } else if (randomNumber === 3 & choose === 2){
+            console.log ("Computer wins!")
+        } else {
+            console.log ("Oh I see you are too scared for the fight 😏");
+        }
+    }
+    
+    function game(){
+        let select = prompt ("what do you play?");
+        let choose = select.toLowerCase ()
+        let randomNumber = (Math.floor(Math.random()*(3-1+1))+1);
+        computerPlay(randomNumber);
+        playerSelection(choose, randomNumber);
+    }
+    game();
+    game();
+   
+    
+// possible combinations 
+// rock = 1 , paper = 2, scissors = 3
+// 1, 2 -> you win s
+// 2, 1 -> computer wins s
+// 1, 3 -> computer wins s
+// 3, 1 -> you win s
+// 2, 3 -> you win s
+// 3, 2 -> computer wins 
+    
+</script>
