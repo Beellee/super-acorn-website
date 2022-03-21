@@ -1,0 +1,65 @@
+/* EXACTLY THE SAME AS THE MAIN PAGE (style.css) ((excep of the .house))*/
+.icon a img{
+    max-width: 7vmin;
+    max-height: auto;
+   padding-top: 1vmin
+}
+/*FONT*/
+body {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+/* FLEXBOX ONLY (no style)*/
+*{
+    margin: 0;
+    padding: 0;
+}
+/* THINGS FROM HEADER*/
+
+/* aquí puedes cambiar los márgenes in header (padding)*/
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 4.5vh;
+    padding-right: 4.5vh; 
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/*THINGS FROM THE MAIN FONT PAGE */
+.mainFontPage {
+    display: flex;
+    min-height: 70vmin;
+    justify-content: space-around;
+}
+
+.title {
+    margin: auto;
+    text-align: center;
+}
+
+
+
+
+/*STYLES OF THE PROJECTS*/
+.projects{
+    display: flex;
+    flex-direction: column;
+
+    margin: 10vmin;
+    margin-left: 20vmin;
+}
+
+/*FIRST ELEMENT (rock paper scissors game)*/
+.rockPaperScissors img{
+    
+    width: 90vh;
+    height: auto;
+}

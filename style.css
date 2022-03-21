@@ -151,13 +151,18 @@ button a {
     border-radius: 5vmin;
     border: 0.5vmin solid #F6F6F2;
 }
+.odin {
+    width: 25vmin;
+    height: 25vmin;
+    border: 0.5vmin solid rgb(211, 211, 211);
+}
 
 /*FIRST STYLE*/
 .firstStyle {
     display: flex;
     flex-direction: row;
     background-color: white;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 
     margin: 3vmax;
