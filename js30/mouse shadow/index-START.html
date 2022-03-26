@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Shadow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="hero">
+    <h1 contenteditable>hello world</h1>
+  </div>
+
+  <style>
+  html {
+    color: #363537;
+    font-family: sans-serif;
+
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Fira Sans', sans-serif;
+  }
+
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }
+
+  h1 {
+    text-shadow: 10px 10px 0 rgba(0,0,0,1);
+    font-size: 100px;
+  }
+  </style>
+
+<script>
+  const hero = document.querySelector(".hero")
+  const text = hero.querySelector("h1")
+
+  const walk = 100; //how much the shadow should walk when you move the mouse 
+
+  function shadow (e){
+    const width = hero.offsetWidth
+    const height = hero.offsetHeight
+
+  
+    
+    let x = e.offsetX
+    let y = e.offsetY 
+    //console.log (x, y)-> when we hover over the h1 div the coordinates change to something near the 0 (it starts counting from inside the div)
+    //to fix this:
+    //console.log (this, e.target) 
+    //this is the parent element (hero) e.target is what the mouse is listening to 
+    if( this !== e.target){
+      x = x + e.target.offsetLeft
+      y = y +e.target.offsetTop
+    }
+    // if someone hovers over the h1 div it'll give use the x that we had plus whatever it has to the left and whatever it has form the top
+    
+    const xWalk = Math.round((x/width * walk) - (walk /2)) //Math.round para eliminar los decimales 
+    const yWalk = Math.round((y/height * walk) - (walk /2))
+
+    /* min 8:09
+    const xWalk = (x/width + walk) - (walk /2)
+    const yWalk = (y/height + walk) - (walk /2)
+    */
+
+    text.style.textShadow =  `
+    ${xWalk}px ${yWalk}px 0 #55EDC2, 
+    ${xWalk * -1}px ${yWalk}px 0 #FF2ECC,
+    ${xWalk}px ${yWalk* -1}px 0 #FF6663,
+    ${yWalk}px ${xWalk * -1}px 0 #71FF89,
+    ${yWalk* -0.5}px ${xWalk * -0.5}px 0 #E0FF4F
+    ` // 10px 10px blur color
+
+    console.log ()
+    
+  }
+  hero.addEventListener("mousemove", shadow)
+</script>
+</body>
+</html>

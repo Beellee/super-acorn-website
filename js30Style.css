@@ -139,6 +139,15 @@ ul{
     right: 3.5vmin;
 }
 
+/*specific elements*/
+.firstElement{
+    box-shadow: 0 0 3vmin #E1DDDF;
+}
+.secondElementContent img {
+width: 50vh;
+height: auto;
+border: rgb(189, 189, 189);
+}
 
 
 
