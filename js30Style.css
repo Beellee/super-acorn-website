@@ -50,7 +50,7 @@ ul{
 
 /* SOSO STYLE*/
 #header {
-    background-color: #000000;
+    background-color: #fdfdfd;
 }
 
 .mainFontPage {
@@ -58,7 +58,7 @@ ul{
 }
 
 .moreHeader {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 
@@ -69,34 +69,6 @@ ul{
     flex-wrap: wrap;
 }
 
-/*FIRST element (drum kit)*/
-.firstElement {
-    display: flex;
-    flex-direction: column;
-
-    margin: 5vmin;
-    margin-left: 7vmin;
-}
-
-.firstElementContent { 
-    display: flex;
-    flex-direction: column;
-    border-radius: 3vmin;
-
-    width: 50vmin;
-    height: 35vmin;
-
-    box-shadow: 0 0 3vmin #E1DDDF;
-}
-
-.firstElement img {
-    position: relative;
-    top: 1vmin;
-    width: 50vmin;
-    height: 32vmin;
-    border-radius: 0 0 3vmin 3vmin;
-    /*for now the best solution that ive found id to make the mage the same sice ass the firstElementContent (i had a problem because when i made the image a link it went out of it)*/
-}
 
 
 /*here there is the title and the apple buttons*/
@@ -139,15 +111,39 @@ ul{
     right: 3.5vmin;
 }
 
-/*specific elements*/
-.firstElement{
-    box-shadow: 0 0 3vmin #E1DDDF;
-}
-.secondElementContent img {
-width: 50vh;
-height: auto;
-border: rgb(189, 189, 189);
+.element {
+    display: flex;
+    flex-direction: column;
+
+    margin: 5vh;
+    margin-left: 7vh;
 }
 
+.elementContent { 
+    display: flex;
+    flex-direction: column;
+    border-radius: 3vh;
+
+    width: 60vh;
+    height: auto;
+
+    box-shadow: 0 0 3vh #E1DDDF;
+}
+
+.elementContent img {
+    position: relative;
+    top: 1vh;
+    width: 60vh;
+    height: auto;
+    border-radius: 0 0 3vmin 3vmin;
+    /*for now the best solution that ive found id to make the mage the same sice ass the firstElementContent (i had a problem because when i made the image a link it went out of it)*/
+}
+
+
+/*FIRST element (drum kit)*/
+
+/*SECOND ELEMENT (mouse over text)*/
+
+/*THIRD ELEMENT (CSS+JS clock)*/
 
 

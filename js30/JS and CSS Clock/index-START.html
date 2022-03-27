@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JS + CSS Clock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  
+  <div class="clock">
+    <div class="today"></div>
+    <div class="items">
+      <div class="twelve">12</div>
+      <div class="six">6</div>
+      <div class="three">3</div>
+      <div class="nine">9</div>
+    </div>
+    
+    <div class="clock-face">
+      <div id="hour" class="hand hour-hand"></div>
+      <div id="min" class="hand min-hand"></div>
+      <div id="second" class="hand second-hand"></div>
+    </div>
+    
+  </div>
+  
+
+  <style>
+    
+    body {
+      font-family: 'Monoton', cursive;
+    }
+
+    html {
+      background: #ffffff ;
+      background-size: cover;
+      background-repeat: no-repeat;
+      text-align: center;
+      font-size: 10px;
+      background-color: #ffe87c;
+    }
+
+    body {
+      margin: 0;
+      font-size: 4.5vmin;
+      display: flex;
+      flex: 1;
+      min-height: 100vh;
+      align-items: center;
+    }
+
+    .clock {
+      width: 30vmin;
+      height: 30vmin;
+      border: 1vmin solid #000000;
+      border-radius: 50%;
+      margin: 50px auto;
+      position: relative;
+      padding: 2rem;
+      background-color: white ;
+      /*box-shadow*/
+      box-shadow: -40px -1px 50px 50px #E92020,  50px 50px 50px 50px  #f09642 ;
+      animation: clockWaves 10s infinite
+    }
+    @keyframes clockWaves {
+      50% { 
+        box-shadow: -40px -1px 50px 50px #f09642,  50px 50px 50px 50px  #E92020, 50px 5px 50px 50px #ed5b31;
+      }
+      
+    }
+
+    .clock-face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-3px);
+      /* account for the height of the clock hands */
+      bottom: 37.5vmin;
+      
+      
+    }
+
+    .hand {
+      width: 50%;
+      height: 6px;
+      background: black;
+      position: absolute;
+      top: 50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: all 0.5s;
+      transition-timing-function: cubic-bezier(0, 0, 0, 1.42);
+    }
+    .today {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      bottom: 30vmin;
+      right: 10vmin;
+      width: 50vmin;
+      height: 10vmin;
+      color: #ff69eb;
+      text-shadow: 2px 2px 2rem#ff46b8;
+      
+    }
+
+    #hour {
+      height: 1vmin;
+      width: 40%;
+      left: 2.7vmin;
+      background-color: #FC9E4F;
+      border-radius: 2vmin;
+    }
+
+    #min {
+      background-color: #FFA0FD;
+      border-radius: 1vmin;
+    }
+
+    #second {
+      height: 0.2vmin;
+      background-color: #e63462;
+    }
+
+    .items {
+      position: relative;
+      bottom: 10vmin;
+    }
+    .twelve {
+      position: relative;
+      bottom: 2.3vmin;
+      color: #2B3943;
+    }
+    .six {
+      position: relative;
+      top: 18.5vmin;
+      color: #2B3943;
+    }
+    .three {
+      position: relative;
+      left: 14vmin;
+      bottom: 2vmin;
+      color: #2B3943;
+    }
+    .nine {
+      position: relative;
+      right: 14vmin;
+      bottom: 8.5vmin;
+      color: #2B3943;
+    }
+
+   
+  
+
+
+    
+  </style>
+
+  <script>
+    const secondHand = document.querySelector('.second-hand');
+    const minsHand = document.querySelector('.min-hand');
+    const hourHand = document.querySelector('.hour-hand');
+    
+    
+
+    function setDate() {
+      const now = new Date();
+
+      const seconds = now.getSeconds();
+      const secondsDegrees = (((seconds / 60) * 360) + 90);
+
+      secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+
+      const mins = now.getMinutes();
+      const minsDegrees = (((mins / 60) * 360) + 90);
+
+      minsHand.style.transform = `rotate(${minsDegrees}deg)`;
+
+
+      const hour = now.getHours();
+      const hourDegrees = ((hour / 12) * 360) + ((mins / 60) * 30) + 90;
+      hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+      
+    
+    }
+
+    setInterval(setDate, 1000);
+
+    const todayDate = document.querySelector('.today');
+    function setDay() {
+      const now = new Date();
+      const day = now.getUTCDate();
+      const badMonth = now.getMonth();
+      const month = badMonth + 1;
+      const year = now.getUTCFullYear();
+      todayDate.textContent += "Today is " + `${day}`+ "th of " + `${month}`+ ", " + `${year}`
+      console.log ("hi:)");
+    }
+    setDay();
+
+  </script>
+</body>
+
+</html>
