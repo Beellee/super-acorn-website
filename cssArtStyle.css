@@ -120,11 +120,22 @@ footer {
     box-shadow: 0 0 3vmin #255356;
 }
 
-/*FIRST ART*/
-
-main img  {
+/*general things to the art gallery components*/
+main img{
     width: 40vmin;
     height: 40vmin;
+}
+.sub {
+   
+    background-color: #F3F7F5;
+    padding: 2vmin;
+    border-radius: 0.5vmin;
+}
+
+/*FIRST ART*/
+
+.firstArt img  {
+    
     display: flex;
    position: relative;
    bottom: 1.3vmin;
@@ -134,18 +145,17 @@ main img  {
 
 /*FUNGY*/
 .firstArt {
+    width: fit-content;
+    height: 50vmin;
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 5vmin;
 }
 
-.firstArtSub {
-    background-color: #F3F7F5;
-    padding: 2vmin;
-    border-radius: 0.5vmin;
-}
+
 
 .fungy {
     width: 35vmin;
@@ -159,9 +169,12 @@ main img  {
 }
 /*RANDOM CSS DRAW*/
 .secondArt{
+    width: fit-content;
+    height: 50vmin;
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 5vmin;
 }
