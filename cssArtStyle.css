@@ -67,7 +67,6 @@ section {
     justify-content: center;
     align-items: center;
 
-   
 }
 @keyframes pulse {
     0%, 100% {
@@ -133,6 +132,7 @@ main img  {
    
 }
 
+/*FUNGY*/
 .firstArt {
     display: flex;
     flex-direction: column;
@@ -156,6 +156,14 @@ main img  {
 
 .fungyClarification {
     padding-top: 1vmin;
+}
+/*RANDOM CSS DRAW*/
+.secondArt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vmin;
 }
 
 

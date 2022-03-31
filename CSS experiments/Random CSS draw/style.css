@@ -1,0 +1,383 @@
+/*i´m going to try to set variables*/
+:root{
+    --eyes: #2331f2;
+    --mouth: #e0fabf;
+    --head: #dc2bdf;
+    --body: #15898d;
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    /*get rid of the "base consifuration"*/
+    box-sizing: border-box;
+}
+
+.canvas {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100%;
+    height: 100vh;
+}
+
+.background {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 90vmin;
+    height: 90vmin;
+
+    /*MAYBE CHANGE width & height TO FIT CONTENT
+    if you do so you'll have to change also the charecter width an height because i set them to 90*/
+
+    background-color: #cfefe8;
+    /*idk why i cant set a border*/
+}
+.character {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    width: 90vmin;
+    height: 90vmin;
+}
+
+button{
+    margin-top: 3vh;
+    width: 10vmin;
+    height: 4vmin;
+    background-color: azure;
+}
+/* im going to comment it because im doing the different faces and maybe the best practize is to put this qualitis on each element
+.head {
+    position: relative;
+    margin-top: 5vmin;
+ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /*the flex is needed for the eyes and mouth to be on their place 
+
+    width: 30vmin;
+    height: 30vmin;
+
+}
+*/
+
+/* im going to comment it because im doing the different faces and maybe the best practize is to put this qualitis on each element
+.body {
+    position: relative;
+
+    width: 30vmin;
+    height: 50vmin;
+
+    background-color: rgb(251, 174, 8);
+}
+*/
+.eyes {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 20vmin;
+    height: 7vmin;
+
+    margin-top: 1vmin;
+    /*MARGIN O NO MARGIN???*/
+
+    
+}
+
+.mouth {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 20vmin;
+    height: 7vmin;
+    margin: 1vmin;
+
+
+    
+}
+
+/* 🌟 HERE STARTS THE MAGIC */
+
+/*👀 EYES*/
+/*mybe if later you want to assign different numbers for height and width to the bodies (to have bigguer variety) you have to state rules for the flex grow and srink in the eyes and mouth*/
+/*Eye left y eye right no hacen falta. basta con añadir la clase del ojo que se quiera en el if de math random 
+hay que hacer un math random para cada parte (para ojo derecho, izquierdo, cabeza, cuerpo y boca / y color de fondo)
+make an algorithm that makes sure that the same random number is not choosen twice (except for the eyes if you wnat so)
+so you could assing to each random number a name and then compare them*/
+/*.eyeLeft{
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: rgb(251, 251, 251);
+}
+   
+.eyeRight {
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: black;
+    z-index: 2;
+    left: 2vmin;
+}
+*/
+/*circle*/
+.eyeOne{
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: var(--eyes);
+}
+
+/*oval*/
+.eyeTwo{
+    width: 3vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: var(--eyes);
+}
+
+/*heart*/
+.eyeThree {
+    background-color: var(--eyes);
+    display: inline-block;
+    height: 30px;
+    margin: 0 10px;
+    position: relative;
+    top: 0;
+    transform: rotate(-45deg);
+    width: 30px;
+}
+.eyeThree::before, .eyeThree::after{
+    content: "";
+    background-color: var(--eyes);
+    border-radius: 50%;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+}
+.eyeThree::before{
+    top: -15px;
+    left: 0;
+}
+.eyeThree::after{
+    left: 15px;
+    top: 0;
+}
+  
+/*dot dot*/
+.eyeFour{
+    width: 5vmin;
+    height: 5vmin;
+
+    background-color: var(--eyes);
+    border-radius: 50%;
+}
+.eyeFour::after{
+    content: "";
+    position: absolute;
+    left: auto;
+    width: 2vmin;
+    height: 2vmin;
+    background-color: rgba(248, 248, 248, 0.938);
+
+    border-radius: 50%;
+}
+
+/*close up*/
+.eyeFive {
+    position: relative;
+    top: 2vmin;
+    height: 5vh;
+    width: 5vh;
+    border-radius: 50%;
+    background-color: solid transparent;
+    border-top: 3px solid var(--eyes);
+}
+
+/*close down*/
+.eyeSix {
+    position: relative;
+    top: 0vmin;
+    height: 5vh;
+    width: 5vh;
+    border-radius: 50%;
+    background-color: solid transparent;
+    border-bottom: 3px solid var(--eyes);
+}
+
+/*👄 MOUTH*/
+/*happy*/
+.mouthOne {
+    height: 6vmin;
+    width: 6vmin;
+    border-radius: 50%;
+    background-color: solid transparent;
+    border-bottom: 1vmin solid var(--mouth);
+}
+/*super happy*/
+.mouthTwo{
+    position: relative;
+    height: 3vmin;
+    width: 6vmin;
+    
+    border-radius: 0 0 6vh 6vh;
+    background-color: var(--mouth);
+}
+/*serious*/
+.mouthThree{
+    width: 6vmin;
+    height: 1vmin;
+
+    background-color: var(--mouth)
+}
+/*super sad*/
+.mouthFour{
+    position: relative;
+    height: 3vmin;
+    width: 6vmin;
+    
+    border-radius:  6vh 6vh 0 0;
+    background-color: var(--mouth);
+}
+/*sad*/
+.mouthFive{
+    height: 6vmin;
+    width: 6vmin;
+    border-radius: 50%;
+    background-color: solid transparent;
+    border-top: 1vmin solid var(--mouth);
+}
+/*surprised*/
+.mouthSix{
+    width: 4vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    background-color: var(--mouth);
+}
+
+/*😶 FACE*/
+/*square*/
+.headOne{
+    margin-top: 5vmin;
+ 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /*Til here its all comon to all heads*/
+    width: 40vmin;
+    height: 30vmin;
+    border-radius: 2vmin;
+
+    background-color: var(--head);
+}
+/*circle*/
+.headTwo {
+    margin-top: 5vmin;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 30vmin;
+    height: 30vmin;
+    border-radius: 50%;
+    background-color: var(--head);
+}
+/*I can't make any of other shapes op faces because they are made by rotating the shapes or using their borders only and that destroys the face structure*/
+
+/*🦶 BODY*/
+/*square*/
+.bodyOne{
+    position: relative;
+    /*position: relative is common to all bodys*/
+    width: 30vmin;
+    height: 50vmin;
+
+    background-color: var(--body);
+    border-radius:  1vmin 1vmin 0 0 ;
+}
+/*circle*/
+.bodyTwo{
+    position: relative;
+
+    width: 40vmin;
+    height: 50vmin;
+
+    background-color: var(--body);
+    border-radius: 20vmin 20vmin 0 0 ;
+}
+/*triangle down*/
+.bodyThree{
+    position: relative;
+
+    width: 0;
+    height: 0;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    border-top: 400px solid var(--body);
+    border-radius: 10vmin;
+}
+/*triangle up*/
+.bodyFour{
+    position: relative;
+
+    width: 0;
+    height: 0;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-bottom: 350px solid var(--body);
+}
+/*I cant find a way for the heart to be displayed (as it's rotated, it goes out of the background) */
+/*weird heart*/
+.bodyFive{
+    position: relative;
+
+/*    background-color: red;
+    display: inline-block;
+    height: 30vmin;
+    top: 0;
+    width: 30vmin;
+*/
+    margin-top: 5.5vmin;
+    width: 0;
+    height: 0;
+    border-left: 16.3vmin solid transparent;
+    border-right: 16.3vmin solid transparent;
+    border-top: 30vmin solid var(--body);
+    border-radius: 10vmin;
+   
+}
+.bodyFive::before, .bodyFive::after{
+    content: "";
+    background-color: var(--body);
+    border-radius: 50%;
+    height: 15vmin;
+    position: absolute;
+    width: 15vmin;
+    
+}
+.bodyFive::before{
+    top: -37vmin;
+    left: -15vmin;
+}
+.bodyFive::after{
+    left: 0vmin;
+    top: -37vmin;
+}

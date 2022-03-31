@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuessMyFace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="canvas">
+        <div class="background">
+           <div class="character">
+                <div class="head">
+                    <div class="eyes">
+                        <div class="eyeLeft"></div>
+                        <div class="eyeRight"></div>
+                    </div>
+                    <div class="mouth">
+                        <div class="mouthNumber"></div>
+                    </div>
+                </div>
+                <div class="body"></div>
+           </div>
+        </div>
+        <button onclick="randomNumbers()">Click me!</button>
+    </div>
+</body>
+</html>
+<script>
+    let eyeLeft = document.querySelector(".eyeLeft")
+    var randomLeftEye = 6
+    
+    let eyeRight = document.querySelector(".eyeRight")
+    var randomRightEye = 1 
+
+    let mouth = document.querySelector(".mouthNumber")
+    var randomMouth = 1 
+
+    let head = document.querySelector(".head")
+    var randomHead = 1 
+
+    let body = document.querySelector(".body")
+    var randomBody = 1
+    
+    function randomNumbers(){
+        var randomLeftEye = Math.floor(Math.random()*6)+1;
+        console.log (randomLeftEye)
+
+        var randomRightEye = Math.floor(Math.random()*6)+1;
+        console.log (randomRightEye)
+
+        var randomMouth = Math.floor(Math.random()*6)+1
+        console.log (randomMouth)
+
+        var randomHead = Math.floor(Math.random()*2)+1
+        console.log (randomHead)
+
+        var randomBody = Math.floor(Math.random()*5)+1
+        console.log (randomBody)
+
+        style (randomLeftEye, randomRightEye, randomMouth, randomHead, randomBody)
+    }
+
+    function style (randomLeftEye, randomRightEye, randomMouth, randomHead, randomBody){
+        
+        console.log ("leftEye = ", randomLeftEye)
+        /*for left eye*/
+        if (randomLeftEye === 1) {
+            eyeLeft.className = "eyeOne"
+        } else if (randomLeftEye === 2){
+            eyeLeft.className = "eyeTwo"
+        }else if (randomLeftEye === 3){
+            eyeLeft.className = "eyeThree"
+        }else if (randomLeftEye === 4){
+            eyeLeft.className = "eyeFour"
+        }else if (randomLeftEye === 5){
+            eyeLeft.className = "eyeFive"
+        }else if (randomLeftEye === 6){
+            eyeLeft.className = "eyeSix"
+        }
+
+        /*for right eye*/
+        console.log ("rightEye = ", randomRightEye)
+        if (randomRightEye === 1){
+            eyeRight.className = "eyeOne"
+        } else if (randomRightEye === 2){
+            eyeRight.className = "eyeTwo"
+        }else if (randomRightEye === 3){
+            eyeRight.className = "eyeThree"
+        }else if (randomRightEye === 4){
+            eyeRight.className = "eyeFour"
+        }else if (randomRightEye === 5){
+            eyeRight.className = "eyeFive"
+        }else if (randomRightEye === 6){
+            eyeRight.className = "eyeSix"
+        }
+
+        /*for mouth*/
+        console.log ("mouth = ", randomMouth)
+        if (randomMouth == 1){
+            mouth.className = "mouthOne"
+        }else if (randomMouth == 2){
+            mouth.className = "mouthTwo"
+        }else if (randomMouth == 3){
+            mouth.className = "mouthThree"
+        }else if (randomMouth == 4){
+            mouth.className = "mouthFour"
+        }else if (randomMouth == 5){
+            mouth.className = "mouthFive"
+        }else if (randomMouth == 6){
+            mouth.className = "mouthSix"
+        }
+
+        /*for head*/
+        console.log ("head = ", randomHead)
+        if (randomHead == 1) {
+            head.className = "headOne"
+        }else if (randomHead == 2) {
+            head.className = "headTwo"
+        }
+
+        /*for body*/
+        console.log ("body = ", randomBody)
+        if (randomBody == 1){
+            body.className = "bodyOne"
+        }else if (randomBody == 2){
+            body.className = "bodyTwo"
+        }else if (randomBody == 3){
+            body.className = "bodyThree"
+        }else if (randomBody == 4){
+            body.className = "bodyFour"
+        }else if (randomBody == 5){
+            body.className = "bodyFive"
+        }
+        set()
+    }
+
+    const palette1 = ["#e2aaee", "#e0fabf", "#f84bf5", "#046c71", "#fbf292", "#39c0a7", "#d1f09f", "#c963d9", "#d3ea76", "#e8df3c", "#15898d", "#f177ee", "#dcfb5f", "#c7f4c7", "#40ca91", "#2331f2", "#5d3aeb", "#e2fe8e", "#b0e9c0", "#ff7f2f", "#dc2bdf", "#f4e279", "#ed322e", "#dce8d1"]
+    const palette = ["#fb4d40", "#ce8ee8", "#4615f7", "#f989fd", "#5fc6a9", "#f3a232", "#c80ed8", "#d426c9", "#37c3be", "#6e5bcf", "#e9cc5a", "#cbef49", "#96CCFC", "#84e58e", "#f0fad0", "#81a5a4", "#a645e7", "#2f2a6f" ]
+    console.log(palette.length)
+    var root = document.querySelector(':root');
+    function set() {
+        /*eyes*/
+        var mathEyes = Math.floor(Math.random()*18)
+        var eyesColor = (palette[mathEyes])
+        root.style.setProperty('--eyes', eyesColor);
+        /*mouth*/
+        var mathMouth = Math.floor(Math.random()*18)
+        var mouthColor = (palette[mathMouth])
+        root.style.setProperty('--mouth', mouthColor)
+        /*Head*/
+        var mathHead = Math.floor(Math.random()*18)
+        var headColor = (palette[mathHead])
+        root.style.setProperty('--head', headColor)
+        /*body*/
+        var mathBody = Math.floor(Math.random()*18)
+        var bodyColor = (palette[mathBody])
+        root.style.setProperty('--body', bodyColor)
+
+        if (mathEyes == mathMouth || mathEyes == mathHead || mathEyes== mathBody || mathMouth ==mathHead || mathMouth==mathBody||mathHead == mathBody) {
+            set()
+        }
+
+        console.log("eyes palette nº =", mathEyes )
+        console.log("mouth palette nº =", mathMouth)
+        console.log("head palette nº =", mathHead)
+        console.log("body palette nº = ", mathBody)
+    }   
+</script>
