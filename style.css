@@ -33,6 +33,51 @@ ul{
    padding-top: 1vmin;
 }
 
+/*apple buttom for the colourful mode */
+/*off button*/
+    input.appleButton {
+        position: absolute;
+        right: 5vh;
+        top: 2vh;
+
+        appearance: none;
+        outline: none;
+        
+        width: 51px;
+        height: 31px;
+
+        background-color: #ffffff;
+        border: 1px solid #D9DADC;
+
+        border-radius: 51px;
+        box-shadow: inset -20px 0 0 0 #d1d1d1;
+        
+        transition-duration: 200ms;
+    }
+    input.appleButton::after{
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 1px;
+
+        width: 26px;
+        height: 26px;
+
+        border-radius: 50%;
+        box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+
+        background-color: transparent;
+    }
+    /*on button*/
+    input.appleButton:checked{
+        border-color: #4ED164;
+        box-shadow: inset 20px 0 0 0 #4ED164;
+    }
+    input.appleButton:checked::after{
+        left: 21px;
+        box-shadow: -2px 4px 3px rgba(0, 0, 0, 0.05);
+    }
+
 /*THINGS FROM THE MAIN FONT PAGE */
 .mainFontPage {
     display: flex;
