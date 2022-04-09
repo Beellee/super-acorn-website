@@ -24,7 +24,7 @@ ul{
     display: flex;
     list-style-type: none;
     flex-direction: row;
-    gap: 10px;
+    gap: 10vh;
 }
 
 .icon img {
@@ -106,6 +106,11 @@ ul{
     width: 35%;
     min-width: 40vmin;
 }
+/*the only place .meText is used is here(i just made them to style the text)*/
+.meText {
+    margin: 2vmin;
+    margin-left: 3vmin;
+}
 
 .projects {
     display: flex;
@@ -126,6 +131,7 @@ button {
 /* SOSO STYLE*/
 #header {
     background-color: #ffffff;
+    color: rgb(0, 0, 0);
 }
 
 .mainFontPage {
@@ -134,10 +140,12 @@ button {
 
 .me {
     background-color: #000000;
+    color: white;
 }
 
 .projects {
     background-color: #FFFFFF;
+    color: black;
 }
 
 button {
@@ -146,31 +154,15 @@ button {
 }
 
 
-/*TEXT*/ 
-/*the only place .meText and .projectsText is used is here
-(i just made them to style the text)*/
-
-.meText {
-    color: white;
-    margin: 2vmin;
-    margin-left: 3vmin;
-}
-
-.projectsText {
-    color: black;
-}
-
-/*when i try to place the header elements in a headerText div there is a 
-problem and they loose the flexbox so im going to style them individually */
-.logo {
-    color: white;
-}
-.moreHeader {
-    color: rgb(0, 0, 0);
-}
-
 /*COLORFOUL STYLE*/
-
+.titleStyle{
+    background-color: #bff6ca;
+    color: #f87435;
+}
+.meDivStyle{
+    background-color: #d79def;
+    color: #000000;
+}
 
 
 /*FLEXBOX OF MY PROJECTS */

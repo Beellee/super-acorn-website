@@ -12,15 +12,29 @@
     
     <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    
+</style>
+<script>
+    
+    function changeStyle(){
+        var pageTitle = document.querySelector(".mainFontPage")
+        var meDiv = document.querySelector(".me")
+        
+        pageTitle.classList.toggle("titleStyle")
+        meDiv.classList.toggle("meDivStyle");
+        
+    }
+</script>
 <body>
     <!-- HEADER (Logo, other pages)-->
     <header id="header"> 
        <div class="icon"><img src="images/icon.png" alt=""></div>
-       <div class="moreHeader">
+       <div>
            <ul>
-               <li><input class="appleButton" type="checkbox" onclick="partyMode()" ></li>
-           </ul>
-           
+               <li>Change color mode:</li>
+               <li><input class="appleButton" type="checkbox" onclick="changeStyle()" ></li>
+           </ul>   
        </div>
     </header>
     <!-- MAIN FONT PAGE (Title, Background image) -->
