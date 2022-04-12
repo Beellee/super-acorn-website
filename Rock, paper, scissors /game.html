@@ -145,7 +145,7 @@
         <p>Oh! thank God you are here, could you please help me on my trip?</p>
     </div>
     <div class="clickTheGhost">
-        <p>(to start exploring click on the ghost)</p>
+        <p>(to start exploring use the arrow keys and the scrollbar)</p>
     </div>
 
 
@@ -174,7 +174,49 @@
         hide.style.display = 'none'
     }
 
-    /*ghost movement*/
+
+    //GHOST MOVE
+  
+const Player = {
+  el: document.getElementById('ghost'),
+  x: 200,
+  y: 100,
+  speed: 2,
+  move() {
+    // If no collision with map or tiles... (TODO!)
+    this.el.style.transform = `translate(${this.x}px, ${this.y}px)`;
+  }
+};
+ 
+const K = {
+  fn(ev) {
+    ev.preventDefault();
+    const k = ev.which;
+    if (k >= 37 && k <= 40) K[k] = ev.type === "keydown"; // If is arrow
+  }
+};
+  
+const update = () => {
+    // 1 / Math.sqrt(2) = 0.7071.. (Diagonal)
+    let dist = (K[37] || K[39])  ? 2 : 1;
+    dist *= Player.speed;
+    if (K[37]) Player.x -= dist;
+    
+    if (K[39]) Player.x += dist;
+    
+    Player.move();
+}
+
+document.addEventListener('keydown', K.fn);
+document.addEventListener('keyup', K.fn);
+
+(function engine() {
+  update();
+  window.requestAnimationFrame(engine);
+}());
+//END OF GHOST MOVE 
+
+    /*ghost movement
     let counter = 1;
     let lenghtCounter = 1;
 
@@ -202,7 +244,7 @@
             }
         }, 20);
     }
-
+    */
 
 
     /*initial set*/

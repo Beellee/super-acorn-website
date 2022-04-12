@@ -34,18 +34,19 @@ function shadow (e){
     const yWalk = Math.round((y/ height * walk) - (walk / 2))
     
    title.style.textShadow = `
-   ${xWalk}px ${yWalk}px 0 #55EDC2, 
-   ${xWalk * -1}px ${yWalk}px 0 #FF2ECC,
-   ${xWalk}px ${yWalk* -1}px 0 #FF6663,
-   ${yWalk}px ${xWalk * -1}px 0 #71FF89,
-   ${yWalk* -0.5}px ${xWalk * -0.5}px 0 #E0FF4F
+   ${xWalk}px ${yWalk}px 0 #f33030, 
+   ${xWalk * -2}px ${yWalk * 2}px 0 #e4fdb9,
+   ${xWalk}px ${yWalk* -1}px 0 #fabe56,
+   ${yWalk}px ${xWalk * -1}px 0 #d871e8
    `
-   console.log(`shit ${xWalk}`)
- 
-   
-   
 
-    //las variables no funcionan ns xq 
+   /*possible comb 
+   ${xWalk}px ${yWalk}px 0 #f8ff9b, 
+   ${xWalk * -1}px ${yWalk}px 0 #F0BAFE,
+   ${xWalk}px ${yWalk* -1}px 0 #C6EEC8,
+   ${yWalk}px ${xWalk * -1}px 0 #F97808
+-1 
+   */
 }
 mainFontPage.addEventListener("mousemove", shadow)
 }

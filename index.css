@@ -86,6 +86,7 @@ ul{
 }
 
 .title {
+    font-size: 100px;
     margin: auto;
     text-align: center;
 }
@@ -156,7 +157,7 @@ button {
 
 /*COLORFOUL STYLE*/
 .titleStyle{
-    background-color: #bff6ca;
+    background-color: #131368;
     color: #f87435;
 }
 .meDivStyle{
