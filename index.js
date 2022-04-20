@@ -1,11 +1,18 @@
 /*change the style (colors) */
 function changeStyle(){
+    var header = document.querySelector(".header")
     var pageTitle = document.querySelector(".mainFontPage")
     var meDiv = document.querySelector(".me")
+   // const buttons = document.querySelectorAll(".buttonJS")
     
+    header.classList.toggle("headerStyle")
     pageTitle.classList.toggle("titleStyle")
     meDiv.classList.toggle("meDivStyle");
-    
+    //buttons.classList.toggle("buttonStyle")
+
+    console.log(header)
+    // i wnat to also change the style of the buttons but i cant, 
+    //it seems that for some reason i cant use the query selector All 
 }
 
 

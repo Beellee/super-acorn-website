@@ -1,7 +1,11 @@
 /*FONT*/
 body {
-    font-family: 'Rubik Mono One', sans-serif;
-    font-family: 'Source Sans Pro', sans-serif;
+    Font-Family: 'Sintony', Sans-Serif;
+    Font-Size: 15px;
+}
+.title{
+    Font-Family: 'Source Sans Pro', Cursive;
+    Font-Size: 90px;
 }
 /* FLEXBOX ONLY (no style)*/
 *{
@@ -11,7 +15,7 @@ body {
 /* THINGS FROM HEADER*/
 
 /* aquí puedes cambiar los márgenes in header (padding)*/
-#header {
+.header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -86,7 +90,6 @@ ul{
 }
 
 .title {
-    font-size: 100px;
     margin: auto;
     text-align: center;
 }
@@ -130,7 +133,7 @@ button {
 
 
 /* SOSO STYLE*/
-#header {
+.header {
     background-color: #ffffff;
     color: rgb(0, 0, 0);
 }
@@ -156,14 +159,24 @@ button {
 
 
 /*COLORFOUL STYLE*/
+.headerStyle {
+   /*i dont know */
+   background-color: #06c0b0;
+   
+}
+.buttonStyle {
+    background-color: #d79def;     
+}
 .titleStyle{
-    background-color: #131368;
+    background-color: #FCA82B;
     color: #f87435;
 }
 .meDivStyle{
-    background-color: #d79def;
+    background-color: #ebfb9e;
+    /*#d79def*/
     color: #000000;
 }
+
 
 
 /*FLEXBOX OF MY PROJECTS */
