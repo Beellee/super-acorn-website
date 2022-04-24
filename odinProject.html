@@ -83,18 +83,18 @@
     // there has to be a better way 
     rockPaperScissorsButton.onclick = function (){
         if(rockPaperScissorsProject.style.display != 'block'){
+            deleteAll()
             rockPaperScissorsProject.style.display = 'block';
-            etchSketchProject.style.display= 'none';
-            calculatorProject.style.display= 'none';
+            
         } else{
             rockPaperScissorsProject.style.display= 'none';
         }
     };
     etchSketchButton.onclick = function (){
         if(etchSketchProject.style.display != 'block'){
+            deleteAll()
             etchSketchProject.style.display = 'block';
-            rockPaperScissorsProject.style.display= 'none';
-            calculatorProject.style.display= 'none';
+           
         } else{
             etchSketchProject.style.display= 'none';
 
@@ -102,11 +102,16 @@
     }
     calculatorButton.onclick = function(){
         if(calculatorProject.style.display != 'block'){
+            deleteAll()
             calculatorProject.style.display = 'block';
-            rockPaperScissorsProject.style.display= 'none';
-            etchSketchProject.style.display= 'none';
+            
         } else{
             calculatorProject.style.display= 'none';
         }
+    }
+    function deleteAll(){
+        rockPaperScissorsProject.style.display= 'none';
+        etchSketchProject.style.display= 'none';
+        calculatorProject.style.display= 'none';
     }
 </script>
