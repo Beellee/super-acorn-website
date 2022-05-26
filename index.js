@@ -1,26 +1,28 @@
 /*change the style (colors) */
+var timesClicked = 0
 function changeStyle(){
+    timesClicked++ // i crate this variable just to style the more! buttons 
+    console.log(timesClicked)
     var header = document.querySelector(".header")
     var pageTitle = document.querySelector(".mainFontPage")
     var meDiv = document.querySelector(".me")
     const projectsPage= document.querySelector('.projectsText')
     const moreButton = projectsPage.querySelectorAll('button')
-   // const buttons = document.querySelectorAll(".buttonJS")
+
     
     header.classList.toggle("headerStyle")
     pageTitle.classList.toggle("titleStyle")
     meDiv.classList.toggle("meDivStyle");
-    //moreButton.forEach.style.backgroundColor = "red"
-    moreButton.forEach((element)=>{
-        element.style.backgroundColor="#d79def"
-    });
-    
-    
-    //buttons.classList.toggle("buttonStyle")
 
-    console.log(moreButton)
-    // i wnat to also change the style of the buttons but i cant, 
-    //it seems that for some reason i cant use the query selector All 
+    if(timesClicked % 2 == 0){
+        moreButton.forEach((element)=>{
+            element.style.backgroundColor="#0f0f0f"
+        });
+    } else {
+        moreButton.forEach((element)=>{
+            element.style.backgroundColor="#d79def"
+        });
+    } 
 }
 
 
