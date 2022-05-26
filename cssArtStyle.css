@@ -60,13 +60,16 @@ p {
     margin: 0;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
 section {
     min-width: 50vw;
     height: 80vmin;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 @keyframes pulse {
     0%, 100% {
