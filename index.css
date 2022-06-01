@@ -102,14 +102,54 @@ ul{
     align-items: stretch;
     flex-wrap: wrap;
 }
-
+/*CV CONSOLE*/
 .me {
+    font-family: 'Inconsolata', monospace;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     width: 35%;
     min-width: 40vmin;
 }
+.topConsole{
+    display: flex;
+    flex-direction: row;
+    margin: 1vmin;
+    justify-content: space-between;
+}
+.buttonsCV{ 
+    display: flex;
+    flex-direction: row;
+    gap: 1vmin;
+}
+.me button{
+    font: inherit;
+    cursor: pointer;
+    display: flex;
+    width: 1vmax;
+    height: 1vmax;
+    border-radius: 50%;
+    border: none;
+}
+.closeCV{
+    background-color: #f84545;
+}
+.hideCV{
+    background-color: #fbb024;
+}
+.openCV{
+    background-color: #29c131;
+}
+.titleCV{
+    margin: auto;
+    text-align: center;
+    position: relative;
+    right: 3.5vmin;
+}
+
+
+
+
 /*the only place .meText is used is here(i just made them to style the text)*/
 .meText {
     margin: 2vmin;
