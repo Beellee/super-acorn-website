@@ -134,42 +134,39 @@ ul{
 
     border-radius: 1.5vh 0 0 1.5vh;
     background-color: #edebea;
-    border-right: 1px solid #cacaca;
 }
 .colors {
     display: flex;
     margin: 10px;
     gap: 3px;
 }
-.red {
-    margin-left: 1vmin;
+.colors div{
+    margin-left: 0.8vmin;
     margin-top: 0.5vmin;
     width: 1.5vh;
     height: 1.5vh;
     border-radius: 50%;
+}
+.red {
+    margin-left: 1vmin;
     background-color: #F84645;
 }
 .yellow {
-    margin-left: 0.8vmin;
-    margin-top: 0.5vmin;
-    width: 1.5vh;
-    height: 1.5vh;
-    border-radius: 50%;
     background-color: #FBAF24;
 }
 .green {
-    margin-left: 0.8vmin;
-    margin-top: 0.5vmin;
-    width: 1.5vh;
-    height: 1.5vh;
-    border-radius: 50%;
     background-color: #29C532;
 }
 .titles{
     margin: 15px;
     display: flex;
     flex-direction: column;
-    row-gap: 1vh;
+}
+.titles div{
+    margin: 3px;
+    padding: 2px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 
@@ -183,31 +180,38 @@ ul{
     height: 100%;
     display: flex;
     flex-direction: row;
-    align-items: stretch;
 }
 .mainFolderTitle{
     text-align: center;
     padding: 1.5vh;
-    border-bottom: 1px solid #cacaca;
+    border-bottom: 1px solid #e0e0e0;
 }
 /*still to check this */
 .firstExtraInfo{
-
     display: flex;
     flex-direction: column;
-    gap: 0.8vh;
     flex-grow: 1;
     margin: 10px;
-    
+}
+.firstExtraInfo p{
+    padding: 0.4vh;
+}
+.dividerExtraInfo{
+    width: 1px;
+    background-color: #e0e0e0;
+    height: 100%;
 }
 .secondExtraInfo{
-   
-    height: 100%;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    border-left: 1px solid #cacaca;
+    padding:10px;
+    
 }
+.secondExtraInfo p{
+    padding: 0.4vh;
+}
+
 /*top part of the folder*/
 /*
 .topPart {
