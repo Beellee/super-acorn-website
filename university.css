@@ -162,7 +162,7 @@ ul{
     display: flex;
     flex-direction: column;
 }
-.titles div{
+.titles h4{
     margin: 3px;
     padding: 2px;
     border-radius: 4px;
@@ -195,6 +195,8 @@ ul{
 }
 .firstExtraInfo p{
     padding: 0.4vh;
+    border-radius: 4px;
+    cursor: pointer;
 }
 .dividerExtraInfo{
     width: 1px;
@@ -210,4 +212,6 @@ ul{
 }
 .secondExtraInfo p{
     padding: 0.4vh;
+    border-radius: 4px;
+    cursor: pointer;
 }

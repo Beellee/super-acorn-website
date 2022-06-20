@@ -1,10 +1,34 @@
-let titles = document.querySelector(".titles")
-let elementsInsideTitles = titles.querySelectorAll("div")
-titles.addEventListener("click", function(element){
+//selectors for the titles part 
+let titlesListener = document.querySelector(".titles")
+let titleElements = titlesListener.querySelectorAll("h4")
+// selectos for the firstExtraInfo part 
+let firstExtraListener=document.querySelector(".firstExtraInfo")
+let firstExtraElements = firstExtraListener.querySelectorAll("p")
+// selectors for the secondExtraInfo part 
+let secondExtraListener=document.querySelector(".secondExtraInfo")
+let secondExtraElements = secondExtraListener.querySelectorAll("p")
 
-  elementsInsideTitles.forEach(element =>{
-    element.style.backgroundColor="transparent";
-  });
-
-  element.target.style.backgroundColor = "#c6c4c3" 
+titlesListener.addEventListener("click", function(title){
+  if(title.target.nodeName == "H4"){
+    titleElements.forEach(h=>{
+      h.style.backgroundColor="transparent";
+    });
+    title.target.style.backgroundColor = "#c6c4c3" 
+  }
+})
+firstExtraListener.addEventListener("click", function(title){
+  if(title.target.nodeName == "P"){
+    firstExtraElements.forEach(p=>{
+      p.style.backgroundColor="transparent";
+    });
+    title.target.style.backgroundColor = "#c6c4c3" 
+  }
+})
+secondExtraListener.addEventListener("click", function(title){
+  if(title.target.nodeName == "P"){
+    secondExtraElements.forEach(p=>{
+      p.style.backgroundColor="transparent";
+    });
+    title.target.style.backgroundColor = "#c6c4c3" 
+  }
 })
