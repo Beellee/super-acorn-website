@@ -187,6 +187,7 @@ ul{
     border-bottom: 1px solid #e0e0e0;
 }
 /*still to check this */
+
 .firstExtraInfo{
     display: flex;
     flex-direction: column;
@@ -214,4 +215,18 @@ ul{
     padding: 0.4vh;
     border-radius: 4px;
     cursor: pointer;
+}
+
+/*things by default hidden*/
+#firstHide{
+    display: none;
+}
+#secondHide{
+    display: block;
+}
+#subjects{
+    display: none;
+}
+#info{
+    display: none;
 }

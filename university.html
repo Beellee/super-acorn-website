@@ -36,27 +36,43 @@
                     <div class="green"></div>
                 </div>
                 <div class="titles" >
-                    <h4><img src="appleImages/infoIcon.PNG" alt="info"> info</h4>
+                    <h4 onclick="showInfo()"><img src="appleImages/infoIcon.PNG" alt="info"> info</h4>
                     <h4><img src="images/logoUOC.png" alt="logouoc"> University</h4>
-                    <h4><img src="appleImages/normalFolder.PNG" alt="folder"> Subjects</h4>
+                    <h4 onclick="showSubjects()"><img src="appleImages/normalFolder.PNG" alt="folder"> Subjects</h4>
                 </div>
             </div>
             <div class="rightPart">
                 <p class="mainFolderTitle">D🥘S</p>
                 <div class="subfolders">
-                    <div class="firstExtraInfo">
-                        <p><img src="appleImages/macFolder.PNG" alt=""> estadística</p>
-                        <p><img src="appleImages/macFolder.PNG" alt=""> pensamiento computacional</p>
-                        <p>aoaooa</p>
-                        <p>pppppp</p>
+                    <div id="firstHide" class="firstExtraInfo">
+                        <div id="info">
+                            <p><img src="appleImages/clipboard.PNG"> what is this .doc</p>
+                        </div>
+                        <div id="subjects">
+                            <p><img src="appleImages/macFolder.PNG"> Probabilidad y estadística</p>
+                            <p><img src="appleImages/macFolder.PNG"> Pensamiento computacional</p>
+                        </div>
+                        
+                        <!--
+                        <div class="firstExtraInfo">
+                            <p><img src="appleImages/macFolder.PNG" alt=""> Probabilidad y estadística</p>
+                            <p><img src="appleImages/macFolder.PNG" alt=""> Pensamiento computacional</p>
+                            <p>aoaooa</p>
+                            <p>pppppp</p>
+                        </div>
+                        -->
                     </div>
                     <div class="dividerExtraInfo"></div>
-                    <div class="secondExtraInfo">
-                        <p>iiii</p>
-                        <p>oooo</p>
-                        <p>iiiuuuyyt</p>
-                        <p><img src="appleImages/macFolder.PNG" alt=""> pensamiento computacional</p>
+                    <div id="secondHide" class="secondExtraInfo">
+                
+                        <div>
+                            <p>iiii</p>
+                            <p>oooo</p>
+                            <p>iiiuuuyyt</p>
+                            <p><img src="appleImages/macFolder.PNG" alt=""> pensamiento computacional</p>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
