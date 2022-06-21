@@ -1,5 +1,5 @@
 //change the background color of the tiltes part 
-//+ show the first extra info
+//+ show the first extra info & hide second extra info
 let titlesListener = document.querySelector(".titles")
 let titleElements = titlesListener.querySelectorAll("h4")
 let firstHide = document.querySelector("#firstHide")
@@ -10,9 +10,11 @@ titlesListener.addEventListener("click", function(title){
     });
     title.target.style.backgroundColor = "#c6c4c3" 
     firstHide.style.display="block"
+    secondHide.style.display="none"
   }
 })
-//background of the first extra elements
+//background of the first extra elements 
+// + show the second extra info
 let firstExtraElements = firstHide.querySelectorAll("p")
 firstHide.addEventListener("click", function(title){
   console.log(firstExtraElements)
@@ -23,17 +25,14 @@ firstHide.addEventListener("click", function(title){
     });
     title.target.style.backgroundColor = "#1049d9" 
     title.target.style.color= "#ffffff"
+    secondHide.style.display="block"
   }
 })
-// change the background of the subfolders
-/*
-let subfolders=document.querySelector(".subfolders")
-let extraElements = subfolders.querySelectorAll("p")
-
-subfolders.addEventListener("click", function(title){
-  console.log(extraElements)
+//background of the second extra elements 
+let secondExtraElements = secondHide.querySelectorAll("p")
+secondHide.addEventListener("click", function(title){
   if(title.target.nodeName == "P"){
-    extraElements.forEach(p=>{
+    secondExtraElements.forEach(p=>{
       p.style.backgroundColor="transparent";
       p.style.color="#000000"
     });
@@ -41,8 +40,6 @@ subfolders.addEventListener("click", function(title){
     title.target.style.color= "#ffffff"
   }
 })
-*/
-
 
 // FUNCTIONS TO HIDE AND SHOW THE SPECIFIC FOLDERS
 let subjects = document.querySelector("#subjects");
