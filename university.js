@@ -42,18 +42,79 @@ secondHide.addEventListener("click", function(title){
 })
 
 // FUNCTIONS TO HIDE AND SHOW THE SPECIFIC FOLDERS
+/*Rules 
+🟢 elements with this are from the title part (the one that it's at the left)
+🟡 elements with this are from the subfolders>firstHide part (the one that it's at the middle)
+🔴 elements with this are from the subfolders>secondHide part (the one that it's at the right)
+*/
+//🟢🟡 when u click the title part(things that appear from the first extra info)
 let subjects = document.querySelector("#subjects");
 function showSubjects(){
-  hideAll()
+  hideAllFirstExtra()
   subjects.style.display = "block"
+}
+let university= document.querySelector("#university")
+function showUniversity(){
+  hideAllFirstExtra()
+  university.style.display = "block"
 }
 let info = document.querySelector("#info");
 function showInfo(){
-  hideAll()
+  hideAllFirstExtra()
   info.style.display = "block"
 }
-function hideAll(){
+function hideAllFirstExtra(){
   subjects.style.display = "none"
   info.style.display = "none"
+  university.style.display = "none"
+}
+// 🟡 when u click the first extra info part (things that pop up)
+// about info
+let infoDocument = document.querySelector("#infoGoIn"); 
+function showInfoDocument(){
+  infoDocument.style.left="35vw"
+  infoDocument.style.width="45vw"
+  infoDocument.style.height="70vh"
 
+  infoDocument.style.display= "block"
+}
+function deleteInfo(){
+  infoDocument.style.display="none"
+}
+function hideInfo(){
+  // I haven´t been able to hide info on the click of the yellow button
+  infoDocument.style.display="none"
+}
+function bigInfo(){ 
+  infoDocument.style.left="0"
+  infoDocument.style.width="100%"
+  infoDocument.style.height="100%"
+}
+// 🟡🔴 things from the second extra info that appear when u click the first extra info part
+let infoImg = document.querySelector("#secondInfo")
+function showInfoImage(){
+  hideAllSecondExtra()
+  infoImg.style.display= "block"
+}
+let universityImg=document.querySelector("#secondUniversity")
+function showUniversityImage(){
+  hideAllSecondExtra()
+  universityImg.style.display= "block"
+}
+//🔴 things that you can click in the second extra info
+let probabilidadFolderContent = document.querySelector("#secondProbabilidad")
+function showProbabilidadContent(){
+  hideAllSecondExtra()
+  probabilidadFolderContent.style.display="block"
+}
+let pensamientoCompFolderContent = document.querySelector("#secondPensamientoComp")
+function shwopensamientoComp(){
+  hideAllSecondExtra()
+  pensamientoCompFolderContent.style.display="block"
+}
+function hideAllSecondExtra(){
+  infoImg.style.display= "none"
+  universityImg.style.display= "none"
+  probabilidadFolderContent.style.display="none"
+  pensamientoCompFolderContent.style.display="none"
 }

@@ -37,7 +37,7 @@
                 </div>
                 <div class="titles" >
                     <h4 onclick="showInfo()"><img src="appleImages/infoIcon.PNG" alt="info"> info</h4>
-                    <h4><img src="images/logoUOC.png" alt="logouoc"> University</h4>
+                    <h4 onclick="showUniversity()"><img src="images/logoUOC.png" alt="logouoc"> University</h4>
                     <h4 onclick="showSubjects()"><img src="appleImages/normalFolder.PNG" alt="folder"> Subjects</h4>
                 </div>
             </div>
@@ -46,13 +46,15 @@
                 <div class="subfolders">
                     <div id="firstHide" class="firstExtraInfo">
                         <div id="info">
-                            <p><img src="appleImages/clipboard.PNG"> what is this .doc</p>
+                            <p onclick="showInfoDocument(); showInfoImage();"><img src="appleImages/clipboard.PNG"> About_college.doc</p>
                         </div>
                         <div id="subjects">
-                            <p><img src="appleImages/macFolder.PNG"> Probabilidad y estadística</p>
-                            <p><img src="appleImages/macFolder.PNG"> Pensamiento computacional</p>
+                            <p onclick="showProbabilidadContent()"><img src="appleImages/macFolder.PNG"> Probabilidad y estadística</p>
+                            <p onclick="shwopensamientoComp()"><img src="appleImages/macFolder.PNG"> Pensamiento computacional</p>
                         </div>
-                        
+                        <div id="university">
+                            <p onclick="showUniversityImage()"><img src="appleImages/urlIcon.PNG"> <a href="https://www.uoc.edu/portal/en/metodologia-online-qualitat/index.html" target="_blank"> uoc.edu</a></p>
+                        </div>
                         <!--
                         <div class="firstExtraInfo">
                             <p><img src="appleImages/macFolder.PNG" alt=""> Probabilidad y estadística</p>
@@ -64,16 +66,49 @@
                     </div>
                     <div class="dividerExtraInfo"></div>
                     <div id="secondHide" class="secondExtraInfo">
-                
-                        <div>
-                            <p>iiii</p>
-                            <p>oooo</p>
-                            <p>iiiuuuyyt</p>
-                            <p><img src="appleImages/macFolder.PNG" alt=""> pensamiento computacional</p>
+                        <div id="secondInfo">
+                            <img src="appleImages/secondInfo.png" alt="">
+                        </div>  
+                        <div id="secondUniversity">
+                            <img src="appleImages/secondUrl.PNG" alt="">
+                        </div>
+                        <div class="secondSubjects">
+                            <div id="secondProbabilidad">
+                                <p><a href="university docs/probabilidad y estadística/Análisis y visualización de datos.pdf" target="_blank"><img src="appleImages/rLogo.PNG" alt=""> Análisis y visualización de datos</a></p>
+                                <p><a href="university docs/probabilidad y estadística/Distribuciones de probabilidad y variables aleatorias.pdf" target="_blank"><img src="appleImages/rLogo.PNG" alt=""> Distribuciones de probabilidad y variables aleatorias</a></p>
+                                <p><a href="university docs/probabilidad y estadística/Estimación e intervalos de confianza.pdf" target="_blank"><img src="appleImages/rLogo.PNG" alt=""> Estimación e intervalos de confianza</a></p>
+                                <p><a href="university docs/probabilidad y estadística/Contrastes de hipótesis.pdf" target="_blank"><img src="appleImages/rLogo.PNG" alt=""> Contrastes de hipótesis</a></p>
+                                <p><a href="university docs/probabilidad y estadística/Regresión y ANOVA.pdf" target="_blank"><img src="appleImages/rLogo.PNG" alt=""> Regresión y ANOVA</a></p>
+                            </div>
+                            <div id="secondPensamientoComp">
+                                <p><a href="https://replit.com/@PaulaAlvarez3/Parchis?v=1" target="_blank"><img src="appleImages/processingLogo.PNG" alt=""> Parchís</a></p>
+                                <p><a href="https://replit.com/@PaulaAlvarez3/Number-classification?v=1" target="_blank"><img src="appleImages/processingLogo.PNG" alt=""> Number classification</a></p>
+                                <p><a href="https://replit.com/@PaulaAlvarez3/Ping-Pong-wall?v=1" target="_blank"><img src="appleImages/processingLogo.PNG" alt=""> Ping-Pong wall</a></p>
+                                <p><a href="https://replit.com/@PaulaAlvarez3/if-practice?v=1" target="_blank"><img src="appleImages/processingLogo.PNG" alt=""> if practice</a></p>
+                                <p><a href="https://replit.com/@PaulaAlvarez3/Regulate-the-temperature-with-while?v=1" target="_blank"><img src="appleImages/processingLogo.PNG" alt=""> Regulate the temperature with while</a></p>
+                                <p><a href="https://replit.com/@PaulaAlvarez3/Epileptic-functioning-of-processing?v=1" target="_blank"><img src="appleImages/processingLogo.PNG" alt=""> Epileptic functioning of Processing</a></p>
+                                <p><a href="https://replit.com/@PaulaAlvarez3/Data-comparison-in-multidimensional-arrays?v=1" target="_blank"><img src="appleImages/processingLogo.PNG" alt=""> Data comparison in multidimensional arrays</a></p>
+                                <p><a href="https://replit.com/@PaulaAlvarez3/Calculations-with-multidimensional-arrays?v=1" target="_blank"><img src="appleImages/processingLogo.PNG" alt=""> Calculations with multidimensional arrays</a></p>
+                                <p><a href="https://replit.com/@PaulaAlvarez3/Final-processing-masterpiece?v=1" target="_blank"><img src="appleImages/processingLogo.PNG" alt=""><b> 🌟Final processing masterpiece🌟</b></a></p>
+                            </div>
                         </div>
                     </div>
                     
                 </div>
+            </div>
+        </div>
+        <!--here are all the pop ups-->
+        <div id="infoGoIn" class="collegePopUp">
+            <div class="colors">
+                <div onclick="deleteInfo()" class="red"></div>
+                <div onclick="hideInfo()" class="yellow"></div>
+                <div onclick="bigInfo()" class="green"></div>
+            </div>
+            <div class="textHolder">
+                <h2>Hi!</h2>
+                <h3>This page (as you can guess) is about my career, Data Science</h3>
+                <p>In the subject folder you can find some of the projects I did during the course of the degree</p>
+                <p>I will update this section as the website evolves</p>
             </div>
         </div>
     </div>

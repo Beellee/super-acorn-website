@@ -101,9 +101,13 @@ ul{
 }
 
 /*THINGS FROM THE UNIVERSITY PAGE*/
+a{
+    text-decoration: none;
+    color: inherit;
+}
 .uniPage{
     height: 100vh;
-    background-color: rgb(255, 139, 238);
+    background-image: conic-gradient(from 31deg, rgba(255, 139, 238, 1) 50deg, rgba(157, 150, 238, 0.41) 86deg, rgba(204, 157, 238, 0.62) 180deg, rgba(255, 197, 129, 1) 248deg, rgba(255, 139, 238, 1) 342deg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -119,12 +123,21 @@ ul{
 
     background-color: #fcfaf9;
 }
+/*styling of the images (logos and icons)*/
 .folderContainer img{
     width: 18px;
     height: auto;
     position: relative;
     top: 2px;
 }
+.secondExtraInfo img{
+    width: 15vw;
+    margin: 0;
+}
+.secondSubjects img{
+    width: 18px;
+}
+/* end of the img styling */
 .leftPart{
     display: flex;
     flex-direction: column;
@@ -207,9 +220,7 @@ ul{
 .secondExtraInfo{
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
     padding:10px;
-    
 }
 .secondExtraInfo p{
     padding: 0.4vh;
@@ -227,6 +238,80 @@ ul{
 #subjects{
     display: none;
 }
+#university{
+    display: none;
+}
 #info{
     display: none;
 }
+
+#infoGoIn{
+    display: none;
+}
+#secondInfo{
+    display: none;
+}
+#secondUniversity{
+    display: none;
+}
+#secondProbabilidad{
+    display: none;
+}
+#secondPensamientoComp{
+    display: none;
+}
+/*Pops Up*/
+/*from the info title*/
+.collegePopUp{
+    position: absolute;
+    left: 35vw;
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    height: 70vh;
+    display: flex;
+    border-radius: 1.5vh;
+    background-color: rgb(255, 255, 255);
+    -webkit-box-shadow: 0px 4px 12px 5px rgba(0,0,0,0.35); 
+    box-shadow: 0px 4px 12px 5px rgba(0,0,0,0.35);
+}
+.textHolder{
+    padding: 2vw;
+}
+#infoGoIn{
+    animation-name: goIn;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+
+    animation-iteration-count: 1;
+}
+@keyframes goIn {
+    0%{
+        transform: scale(0);
+        transform-origin: 0% 20%;
+    }
+    100%{
+        transform: scale(1);
+        transform-origin: 100% 100% ;
+    }
+}
+/* This was made for the go out of the info part but i couldnt made it work 
+#infoGoOut{
+    animation-name: goOut;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+
+    animation-iteration-count: 1;
+}
+@keyframes goOut {
+    0%{
+        transform: scale(1);
+        transform-origin: 100% 100% ;
+        
+    }
+    100%{
+        transform: scale(0);
+        transform-origin: 0% 20%;
+    }
+}
+*/
