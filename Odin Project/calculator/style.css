@@ -1,0 +1,94 @@
+:root{
+    --buttonWidth: 6vh;
+    --buttonHeight:6vh
+}
+body{
+    width: auto;
+    height: 99vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(317deg, #edcef7, #fa2415, #edcef7);
+    background-size: 600% 600%;
+
+    -webkit-animation: crazyCalc 15s ease infinite;
+    -moz-animation: crazyCalc 15s ease infinite;
+    animation: crazyCalc 15s ease infinite;
+}
+
+@-webkit-keyframes crazyCalc {
+    0%{background-position:2% 0%}
+    50%{background-position:99% 100%}
+    100%{background-position:2% 0%}
+}
+@-moz-keyframes crazyCalc {
+    0%{background-position:2% 0%}
+    50%{background-position:99% 100%}
+    100%{background-position:2% 0%}
+}
+@keyframes crazyCalc {
+    0%{background-position:2% 0%}
+    50%{background-position:99% 100%}
+    100%{background-position:2% 0%}
+}
+
+.window{
+    width: calc(4.05*(var(--buttonWidth)));
+    height: calc(1.5*(var(--buttonHeight)));
+    padding: 5px;
+    margin-left: 3px;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+
+    background-color: rgba(255, 255, 255, 0.692);
+    color: #270e59;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p{
+    margin: 3px;
+    padding: 0;
+}
+button{
+    width: var(--buttonWidth);
+    height: var(--buttonHeight);
+    border: none;
+    box-shadow: rgb(191, 210, 226) 0px 0px 8px 0px inset;
+    font-size: large;
+}
+.bigButtons button{
+    width: calc(2.08*(var(--buttonWidth)));
+    height: var(--buttonHeight);
+    color: #1bcfc0;
+}
+.colorOperators{
+    color: #f76300;
+}
+.colorEqual{
+    color: #bc19ed;
+}
+
+#calculator{
+    width: calc(5*(var(--buttonWidth)));
+    height: calc(7.8*(var(--buttonHeight)));
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 10px;
+    border-radius: 8px;
+    background-color: #ffffff23;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+#calcHeader{
+    width: calc(5*(var(--buttonWidth)));
+    height: calc(0.5*(var(--buttonHeight)));
+
+    border-radius: 8px 8px 0px 0px;
+    background-color: #117268;
+
+    cursor: grab;
+}

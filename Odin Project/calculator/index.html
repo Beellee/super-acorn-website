@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="calculator">
+        <div id="calcHeader"></div>
+        <div>
+            <div class="window"></div>
+        <p class="bigButtons">
+            <button onclick="deleteOne()">DEL</button>
+            <button onclick="deleteAll()">AC</button></p>
+        <p>
+            <button onclick="setText(7)">7</button>
+            <button onclick="setText(8)">8</button>
+            <button onclick="setText(9)">9</button>
+            <button class="colorOperators" onclick="setText('*')"><b>×</b></button>
+        </p> 
+        <p>
+            <button onclick="setText(4)">4</button>
+            <button onclick="setText(5)">5</button>
+            <button onclick="setText(6)">6</button>   
+            <button class="colorOperators" onclick="setText('/')"><b>÷</b></button>
+        </p>
+        <p>
+            <button onclick="setText(1)">1</button>
+            <button onclick="setText(2)">2</button>
+            <button onclick="setText(3)">3</button>
+            <button class="colorOperators" onclick="setText('+')"><b>+</b></button>
+        </p>
+        <p>
+            <button onclick="setText('.')">.</button>
+            <button onclick="setText(0)">0</button>
+            <button class="colorEqual" onclick="preOperate()"><b>=</b></button>
+            <button class="colorOperators" onclick="setText('-')"><b>-</b></button>
+        </p>
+     
+        </div>
+    </div>
+</body>
+</html>
+<script src="script.js"></script>
