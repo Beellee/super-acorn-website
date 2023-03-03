@@ -38,7 +38,7 @@ ul{
 .icon img {
     max-width: 7vmin;
     max-height: auto;
-   padding-top: 1vmin;
+    padding-top: 1vmin;
 }
 
 /*apple buttom for the colourful mode */
@@ -101,6 +101,20 @@ ul{
 }
 
 /*THINGS FROM THE UNIVERSITY PAGE*/
+.loading_bar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.loading_bar div{
+    width: 10vw;
+    height: 3vh;
+    border: 1px solid black;
+    margin-right: 1vw;
+    border-radius: 10px;
+    background: linear-gradient(to right,  rgb(210, 150, 238) 0%,rgb(255, 139, 238) 30%,#f4eff4 30%,#f4eff4 30%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
 a{
     text-decoration: none;
     color: inherit;
@@ -136,6 +150,12 @@ a{
 }
 .secondSubjects img{
     width: 18px;
+}
+.textHolder img{
+    width: 18px;
+    height: auto;
+    position: relative;
+    top: 2px;
 }
 /* end of the img styling */
 .leftPart{
@@ -260,6 +280,9 @@ a{
 #secondPensamientoComp{
     display: none;
 }
+#infoBasesDatosGoIn{
+    display: none;
+}
 /*Pops Up*/
 /*from the info title*/
 .collegePopUp{
@@ -276,9 +299,29 @@ a{
     box-shadow: 0px 4px 12px 5px rgba(0,0,0,0.35);
 }
 .textHolder{
+    display: flex;
+    flex-direction: column;
     padding: 2vw;
+    gap: 1vh;
 }
-#infoGoIn{
+.textHolder a{
+    color: rgb(31, 2, 163);
+}
+.basesDatosInfo{
+    position: absolute;
+    left: 35vw;
+    display: flex;
+    flex-direction: column;
+    width: 45vw;
+    height: 70vh;
+    display: flex;
+    border-radius: 1.5vh;
+    background-color: rgb(255, 255, 255);
+    -webkit-box-shadow: 0px 4px 12px 5px rgba(0,0,0,0.35); 
+    box-shadow: 0px 4px 12px 5px rgba(0,0,0,0.35);
+
+}
+#infoGoIn, #infoBasesDatosGoIn{
     animation-name: goIn;
     animation-duration: 1s;
     animation-timing-function: ease-in;

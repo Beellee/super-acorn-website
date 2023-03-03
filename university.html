@@ -23,7 +23,10 @@
         <!-- MAIN FONT PAGE (Title, Background image) -->
      <div class="mainFontPage">
          <h1 class="title">University</h1>
-         <h2>2022 - still here :)</h2>
+         <div class="loading_bar">
+            <div></div>
+            <h2>30% completed</h2>
+         </div>
      </div>
     </div>
     <!-- UNI FOLDER-->
@@ -48,9 +51,14 @@
                         <div id="info">
                             <p onclick="showInfoDocument(); showInfoImage();"><img src="appleImages/clipboard.PNG"> About_college.doc</p>
                         </div>
+                        <!--🦑 AQUÍ 🦑-->
                         <div id="subjects">
                             <p onclick="showProbabilidadContent()"><img src="appleImages/macFolder.PNG"> Probabilidad y estadística</p>
                             <p onclick="shwopensamientoComp()"><img src="appleImages/macFolder.PNG"> Pensamiento computacional</p>
+                            <p onclick="showAnalisisMultiVar()"><img src="appleImages/macFolder.PNG"> Análisis multivariante</p>
+                            <p onclick="showAlgebraLinear()"><img src="appleImages/macFolder.PNG"> Álgebra lineal</p>
+                            <p onclick="showBasesDatos()"><img src="appleImages/macFolder.PNG"> Bases de datos para Data Warehousing</p>
+                            
                         </div>
                         <div id="university">
                             <p onclick="showUniversityImage()"><img src="appleImages/urlIcon.PNG"> <a href="https://www.uoc.edu/portal/en/metodologia-online-qualitat/index.html" target="_blank"> uoc.edu</a></p>
@@ -73,6 +81,7 @@
                             <img src="appleImages/secondUrl.PNG" alt="">
                         </div>
                         <div class="secondSubjects">
+                            <!--🦑 AQUÍ 🦑-->
                             <div id="secondProbabilidad">
                                 <p><a href="university docs/probabilidad y estadística/Análisis y visualización de datos.pdf" target="_blank"><img src="appleImages/rLogo.PNG" alt=""> Análisis y visualización de datos</a></p>
                                 <p><a href="university docs/probabilidad y estadística/Distribuciones de probabilidad y variables aleatorias.pdf" target="_blank"><img src="appleImages/rLogo.PNG" alt=""> Distribuciones de probabilidad y variables aleatorias</a></p>
@@ -90,6 +99,31 @@
                                 <p><a href="https://replit.com/@PaulaAlvarez3/Data-comparison-in-multidimensional-arrays?v=1" target="_blank"><img src="appleImages/processingLogo.PNG" alt=""> Data comparison in multidimensional arrays</a></p>
                                 <p><a href="https://replit.com/@PaulaAlvarez3/Calculations-with-multidimensional-arrays?v=1" target="_blank"><img src="appleImages/processingLogo.PNG" alt=""> Calculations with multidimensional arrays</a></p>
                                 <p><a href="https://replit.com/@PaulaAlvarez3/Final-processing-masterpiece?v=1" target="_blank"><img src="appleImages/processingLogo.PNG" alt=""><b> 🌟Final processing masterpiece🌟</b></a></p>
+                            </div>
+                            <div id="secondAnalisisMultivar">
+                                <p><a href="university docs/analisis multivariante/Análisis de relaciones de dependencia.pdf" target="_blank"><img src="appleImages/rLogo.PNG" alt=""> Análisis de relaciones de dependencia</a></p>
+                                <p><a href="university docs/analisis multivariante/Análisis de relaciones de interdependencia.pdf" target="_blank"><img src="appleImages/rLogo.PNG" alt=""> Análisis de relaciones de interdependencia</a></p>
+                                <p><a href="university docs/analisis multivariante/Construcción de modelos multivariantes.pdf" target="_blank"><img src="appleImages/rLogo.PNG" alt=""> Construcción de modelos multivariantes</a></p>
+                            </div>
+                            <div id="secondAlgebraLinear">
+                                <p><a href="university docs/algebra linear/Análisis de componentes principales y descomposición en valores singulares.pdf" target="_blank"><img src="appleImages/rLogo.PNG" alt=""> Análisis de componentes principales y descomposición en valores singulares</a></p>
+                                <p><a href="university docs/algebra linear/Cadenas de Markov.pdf" target="_blank"><img src="appleImages/rLogo.PNG" alt=""> Cadenas de Markov</a></p>
+                            </div>
+                            <div id="secondBasesDatos">
+                                <p onclick="showBdDocument()"><img src="appleImages/clipboard.PNG"> Información sobre la asignatura.doc</p>
+                                <p><a href="university docs/bases de datos para data warehousing /pec1.pdf" target="_blank"><img src="appleImages/pdfLogo.png" alt=""> 1. Introducción a las bases de datos relacionales</a></p>
+                                <p><a href="university docs/bases de datos para data warehousing /pec2.sql" target="_blank"><img src="appleImages/postgresql.png" alt=""> 2. Creación y manipulación de una base de datos relacional</a></p>
+                                <p><a href="university docs/bases de datos para data warehousing /pec2.pdf" target="_blank"><img src="appleImages/pdfLogo.png" alt=""> 2. Creación y manipulación de una base de datos relacional</a></p>
+                                <p><a href="university docs/bases de datos para data warehousing /pec3.sql" target="_blank"><img src="appleImages/postgresql.png" alt=""> 3. Procedimientos almacenados y disparadores</a></p>
+                                <p><a href="university docs/bases de datos para data warehousing /pec3.pdf" target="_blank"><img src="appleImages/pdfLogo.png" alt=""> 3. Procedimientos almacenados y disparadores</a></p>
+                                <p><a href="university docs/bases de datos para data warehousing /pec4.sql" target="_blank"><img src="appleImages/postgresql.png" alt=""> 4. Common table expressions y funciones analíticas</a></p>
+                                <p><a href="university docs/bases de datos para data warehousing /pec4.pdf" target="_blank"><img src="appleImages/pdfLogo.png" alt=""> 4. Common table expressions y funciones analíticas</a></p>
+                                
+                            </div>
+                            <div id="secondFundamentosProgramación">
+                                <p onclick="showBdDocument()"><img src="appleImages/clipboard.PNG"> Información sobre la asignatura.doc</p>
+                                <p><a href="university docs/Fundamentos de programación /entrega 2.ipynb" target="_blank"><img src="appleImages/pythonLogo.png" alt=""> 1. Introducción a las bases de datos relacionales</a></p>
+                                
                             </div>
                         </div>
                     </div>
@@ -111,6 +145,39 @@
                 <p>I will update this section as the website evolves</p>
             </div>
         </div>
+        <div id="infoBasesDatosGoIn" class="basesDatosInfo">
+            <div class="colors">
+                <div onclick="deleteInfoBD()" class="red"></div>
+                <div onclick="hideInfoBD()" class="yellow"></div>
+                <div onclick="bigInfoBD()" class="green"></div>
+            </div>
+            <div class="textHolder" style="overflow-y:scroll">
+                <h3>Información sobre los proyectos de la asignatura Bases de Datos para Data Warehousing </h3>
+                <dl>
+                    <dt>A lo largo de la asignatura hemos realizado los siguientes proyectos usando <strong> postgresql </strong>:</dt>
+                    <dd>   - Creación y manipulación de una base de datos relacional.</dd>
+                    <dd>   - Procedimientos almacenados y disparadores.</dd>
+                    <dd>   - Common table expressions y funciones analíticas.</dd>
+                </dl>
+                <p>En el proyecto "Creación y manipulación de una base de datos relacional" se pueden ver los scripts que creé para conformar la base de datos</p>
+                <p>En los proyectos "Procedimientos almacenados y disparadores" y "Common table expressions y funciones analíticas" utilizo la base de datos que creé anteriormente para crear las funciones, disparadores, etc. que me indican los ejercicios.  </p>
+                <dl>
+                    <dt>Los enunciados correspondientes a cada uno de los proyectos son:</dt>
+                    <dd><a href="university docs/bases de datos para data warehousing /Enunciado 0.pdf" target="_blank"><img src="appleImages/pdfLogo.png" alt=""> Introducción a las bases de datos relacionales</a></dd>
+                    <dd><a href="university docs/bases de datos para data warehousing /Enunciado 1.pdf" target="_blank"><img src="appleImages/pdfLogo.png" alt=""> Creación y manipulación de una base de datos relacional</a></dd>
+                    <dd><a href="university docs/bases de datos para data warehousing /Enunciado 2.pdf" target="_blank"><img src="appleImages/pdfLogo.png" alt=""> Procedimientos almacenados y disparadores</a></dd>
+                    <dd><a href="university docs/bases de datos para data warehousing /Enunciado 3.pdf" target="_blank"><img src="appleImages/pdfLogo.png" alt=""> Common table expressions y funciones analíticas</a></dd>
+                </dl>
+                <p>En los demás documentos de esta carpeta adjunto los scripts que creé en cada proyecto junto con un documento donde se muestran las caturas de pantalla de los resultados y la explicación de los ejercicios teóricos.</p>
+                
+            </div>
+        </div>
     </div>
 </body>
 <script src="university.js"></script>
+
+<!-- 
+cuando añadas una nueva asignatura esto es lo que hay que hacer:
+- crear el div dentro de secondSubjects con los elementos a mostrar 
+- crear otro div dentro del div subjects con el titulo de la asignatura
+-->

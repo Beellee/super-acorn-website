@@ -102,6 +102,10 @@ function showUniversityImage(){
   universityImg.style.display= "block"
 }
 //🔴 things that you can click in the second extra info
+/* cuando añadas una nueva asignatura esto es lo que hay que hacer: 
+- crear un let para seleccionar el contenido a mostrar 
+- crear una funcion para mostrar el contenido 
+- añadir display = "none" del elemento creado en la funcion hideAllSecondExtra*/
 let probabilidadFolderContent = document.querySelector("#secondProbabilidad")
 function showProbabilidadContent(){
   hideAllSecondExtra()
@@ -112,9 +116,51 @@ function shwopensamientoComp(){
   hideAllSecondExtra()
   pensamientoCompFolderContent.style.display="block"
 }
+let analisisMultiVarFolderContent = document.querySelector("#secondAnalisisMultivar")
+function showAnalisisMultiVar(){
+  hideAllSecondExtra()
+  analisisMultiVarFolderContent.style.display="block"
+}
+let algebraLinealFolderContent = document.querySelector("#secondAlgebraLinear")
+function showAlgebraLinear(){
+  hideAllSecondExtra()
+  algebraLinealFolderContent.style.display="block"
+}
+let basesDatosFolderContent = document.querySelector("#secondBasesDatos")
+function showBasesDatos(){
+  hideAllSecondExtra()
+  basesDatosFolderContent.style.display="block"
+}
+
 function hideAllSecondExtra(){
   infoImg.style.display= "none"
   universityImg.style.display= "none"
   probabilidadFolderContent.style.display="none"
   pensamientoCompFolderContent.style.display="none"
+  analisisMultiVarFolderContent.style.display="none"
+  algebraLinealFolderContent.style.display="none"
+  basesDatosFolderContent.style.display="none"
+}
+
+/* pop up para info de bases de datos */
+let infoBasesDatos = document.querySelector("#infoBasesDatosGoIn"); 
+function showBdDocument(){
+  infoBasesDatos.style.left="35vw"
+  infoBasesDatos.style.width="45vw"
+  infoBasesDatos.style.height="70vh"
+
+  infoBasesDatos.style.display= "block"
+}
+
+function deleteInfoBD(){
+  infoBasesDatos.style.display="none"
+}
+function hideInfoBD(){
+  // I haven´t been able to hide info on the click of the yellow button
+  infoBasesDatos.style.display="none"
+}
+function bigInfoBD(){ 
+  infoBasesDatos.style.left="0"
+  infoBasesDatos.style.width="100%"
+  infoBasesDatos.style.height="100%"
 }
